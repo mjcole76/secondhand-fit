@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "endpoint": "POST /s2s/v2.0/file/cloth",
+    "provenance": "V2 shape (data.files[0].file_id and data.files[0].requests[0] = {method, url, headers}) from the YouCam API documentation as summarised by the entrant. Not captured from a live response: the id, URL and headers are invented. Replace with a captured live response (secrets and presigned URLs redacted) once a live render succeeds.",
+    "captured": null
+  },
+  "status": 200,
+  "data": {
+    "files": [
+      {
+        "content_type": "image/jpeg",
+        "file_name": "garment.jpg",
+        "file_id": "mock-file",
+        "requests": [
+          {
+            "method": "PUT",
+            "url": "https://upload.mock.invalid/presigned-put",
+            "headers": { "Content-Type": "image/jpeg" }
+          }
+        ]
+      }
+    ]
+  }
+}

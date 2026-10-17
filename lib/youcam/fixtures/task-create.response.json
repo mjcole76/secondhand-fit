@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "endpoint": "POST /s2s/v2.0/task/cloth",
+    "request": { "src_file_id": "<person photo file_id>", "ref_file_id": "<garment file_id>", "garment_category": "upper_body" },
+    "provenance": "V2 shape (data.task_id) from the YouCam API documentation as summarised by the entrant. Not captured from a live response. Replace with a captured live response once a live render succeeds.",
+    "captured": null
+  },
+  "status": 200,
+  "data": {
+    "task_id": "mock-task"
+  }
+}

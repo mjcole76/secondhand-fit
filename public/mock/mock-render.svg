@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="1024" viewBox="0 0 768 1024" role="img" aria-label="Mock render placeholder. Preview only.">
+  <rect width="768" height="1024" fill="#e9e6df"/>
+  <g stroke="#9a978f" stroke-width="4" fill="none">
+    <circle cx="384" cy="220" r="90"/>
+    <path d="M214 330 h340 l60 120 l-70 30 l-20 -40 v420 h-280 v-420 l-20 40 l-70 -30 z"/>
+  </g>
+  <rect x="0" y="880" width="768" height="144" fill="#1c1c1a"/>
+  <text x="384" y="930" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">MOCK RENDER — offline fixture</text>
+  <text x="384" y="975" font-family="system-ui, sans-serif" font-size="17" fill="#ffffff" text-anchor="middle">AI-generated preview only. No fit, size, condition or authenticity claim is made.</text>
+</svg>

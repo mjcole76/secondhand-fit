@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Technological Implementation",
+    "description": "How thoroughly and skillfully does the project integrate at least one Perfect Corp. YouCam API from the Skin, Beauty, Fashion, Jewelry & Watch, Hair & Beard category? Does the project demonstrate clear consumer or eCommerce value? Does the code reflect genuine effort and a working, non-trivial implementation?",
+    "weight": null,
+    "weightAsPublished": "Equally weighted",
+    "infoType": "Official",
+    "confidence": "High"
+  },
+  {
+    "name": "Design",
+    "description": "Does the project deliver a complete, coherent product experience — not just a technical proof of concept?",
+    "weight": null,
+    "weightAsPublished": "Equally weighted",
+    "infoType": "Official",
+    "confidence": "High"
+  },
+  {
+    "name": "Potential Impact",
+    "description": "Does the project make a credible, specific case for solving a real problem for a real audience — and does the solution actually address that problem based on what's demonstrated?",
+    "weight": null,
+    "weightAsPublished": "Equally weighted",
+    "infoType": "Official",
+    "confidence": "High"
+  },
+  {
+    "name": "Quality of the Idea",
+    "description": "Is this a creative, non-obvious use of at least one Perfect Corp. YouCam API from the Skin, Beauty, Fashion, Jewelry & Watch, Hair & Beard category — and does the team demonstrate genuine understanding of the problem space?",
+    "weight": null,
+    "weightAsPublished": "Equally weighted",
+    "infoType": "Official",
+    "confidence": "High"
+  },
+  {
+    "name": "Stage One viability screen (pass/fail)",
+    "description": "Pass/fail gate determining whether the Project reasonably fits the theme and reasonably applies the required APIs/SDKs featured in the Hackathon.",
+    "weight": null,
+    "weightAsPublished": "Pass/fail",
+    "infoType": "Official",
+    "confidence": "High"
+  }
+]

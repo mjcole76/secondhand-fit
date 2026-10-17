@@ -1,0 +1,10 @@
+{
+  "_meta": {
+    "endpoint": "any /s2s/v2.0 request that the API refuses",
+    "provenance": "V2 error shape ({status, error, error_code}) from the YouCam API documentation as summarised by the entrant. The HTTP status that accompanies it is not pinned. Not captured from a live response. Used by the unit tests; not replayed by mock mode.",
+    "captured": null
+  },
+  "status": 400,
+  "error": "mock: invalid parameter",
+  "error_code": "invalid_parameter"
+}

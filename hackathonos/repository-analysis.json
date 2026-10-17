@@ -1,0 +1,489 @@
+{
+  "scannedAt": "2026-10-02T00:31:59.013Z",
+  "note": "Static repository analysis by ContestForge Repository Intelligence. Statuses are evidence-based estimates; runtime verification is still required.",
+  "features": [
+    {
+      "name": "Server-side YouCam Apparel VTO integration (upload → task → bounded polling)",
+      "priority": "P0",
+      "status": "Likely Implemented",
+      "evidence": [
+        "lib/youcam/adapter.ts",
+        "lib/youcam/adapter.ts",
+        "lib/youcam/adapter.ts",
+        "app/page.tsx",
+        "app/status/page.tsx"
+      ]
+    },
+    {
+      "name": "Seller readiness checker with specific retake instructions",
+      "priority": "P0",
+      "status": "Likely Implemented",
+      "evidence": [
+        "components/ReadinessChecker.tsx",
+        "lib/listings/contracts.ts",
+        "components/SellerListingFlow.tsx",
+        "app/listings/page.tsx",
+        "app/listings/[id]/page.tsx"
+      ]
+    },
+    {
+      "name": "Local normalisation of accepted garment images",
+      "priority": "P0",
+      "status": "Likely Implemented",
+      "evidence": [
+        "lib/normalise/normalise.ts",
+        "components/TryOnRunner.tsx",
+        "lib/tryon/contracts.ts",
+        "lib/youcam/adapter.ts",
+        "components/ReadinessChecker.tsx"
+      ]
+    },
+    {
+      "name": "Try-on readiness grade on the listing",
+      "priority": "P0",
+      "status": "Likely Implemented",
+      "evidence": [
+        "components/ReadinessChecker.tsx",
+        "lib/listings/seeded-set.ts",
+        "lib/readiness/grade.ts",
+        "lib/listings/contracts.ts",
+        "components/ReadinessBadge.tsx"
+      ]
+    },
+    {
+      "name": "Buyer consent gate enforced server-side",
+      "priority": "P0",
+      "status": "Likely Implemented",
+      "evidence": [
+        "components/ConsentGate.tsx",
+        "lib/tryon/contracts.ts",
+        "app/api/tryon/route.ts",
+        "lib/tryon/consent.ts",
+        "components/TryOnRunner.tsx"
+      ]
+    },
+    {
+      "name": "Buyer selfie capture and single render with honest progress",
+      "priority": "P0",
+      "status": "Likely Implemented",
+      "evidence": [
+        "components/SelfieCapture.tsx",
+        "components/TryOnRunner.tsx",
+        "app/api/tryon/route.ts",
+        "lib/youcam/adapter.ts"
+      ]
+    },
+    {
+      "name": "Readiness badge and preview-only honesty label on every render",
+      "priority": "P0",
+      "status": "Likely Implemented",
+      "evidence": [
+        "components/ReadinessChecker.tsx",
+        "lib/tryon/contracts.ts",
+        "components/RenderPreview.tsx",
+        "lib/tryon/honesty.ts",
+        "app/api/tryon/route.ts"
+      ]
+    },
+    {
+      "name": "Blocked categories and published scope exclusions",
+      "priority": "P0",
+      "status": "Likely Implemented",
+      "evidence": [
+        "lib/listings/categories.ts",
+        "app/methods/page.tsx",
+        "lib/listings/contracts.ts",
+        "components/SellerListingFlow.tsx"
+      ]
+    },
+    {
+      "name": "Unit budget guard with labelled precomputed fallback",
+      "priority": "P0",
+      "status": "Likely Implemented",
+      "evidence": [
+        "lib/tryon/guard.ts",
+        "lib/youcam/ledger.ts",
+        "app/api/tryon/route.ts",
+        "app/status/page.tsx",
+        "components/TryOnRunner.tsx"
+      ]
+    },
+    {
+      "name": "Seeded demo listing set with the bad flat-lay and its retake",
+      "priority": "P0",
+      "status": "Likely Implemented",
+      "evidence": [
+        "lib/listings/seeded-set.ts",
+        "app/listings/page.tsx",
+        "lib/listings/published.ts",
+        "lib/readiness/seeded.ts",
+        "lib/listings/contracts.ts"
+      ]
+    },
+    {
+      "name": "Public repository with README, setup instructions and licence",
+      "priority": "P0",
+      "status": "Likely Implemented",
+      "evidence": [
+        "scripts/clone-check.mjs",
+        "app/methods/page.tsx"
+      ]
+    },
+    {
+      "name": "Devpost submission package (description, screenshots, demo URL, testing instructions)",
+      "priority": "P0",
+      "status": "Planned Only",
+      "evidence": []
+    },
+    {
+      "name": "1–3 minute YouTube demo video",
+      "priority": "P0",
+      "status": "Planned Only",
+      "evidence": []
+    },
+    {
+      "name": "Empirical calibration harness and threshold provenance",
+      "priority": "P1",
+      "status": "Planned Only",
+      "evidence": []
+    },
+    {
+      "name": "Silent-failure detection on returned renders",
+      "priority": "P1",
+      "status": "Partial",
+      "evidence": [
+        "lib/youcam/adapter.ts"
+      ]
+    },
+    {
+      "name": "Content-addressed render cache",
+      "priority": "P1",
+      "status": "Verified",
+      "evidence": [
+        "lib/youcam/adapter.ts",
+        "app/api/tryon/[renderId]/image/route.ts",
+        "lib/tryon/result-cache.ts",
+        "lib/tryon/contracts.ts",
+        "lib/listings/seeded-set.ts",
+        "lib/youcam/__tests__/adapter.test.ts"
+      ]
+    },
+    {
+      "name": "Public methods page documenting checks, thresholds and limitations",
+      "priority": "P1",
+      "status": "Verified",
+      "evidence": [
+        "lib/youcam/adapter.ts",
+        "scripts/clone-check.mjs",
+        "components/ReadinessChecker.tsx",
+        "lib/youcam/__tests__/adapter.test.ts"
+      ]
+    },
+    {
+      "name": "Seller insights: try-on counts and grade history with small-sample suppression",
+      "priority": "P1",
+      "status": "Likely Implemented",
+      "evidence": [
+        "components/TryOnRunner.tsx",
+        "app/api/tryon/route.ts",
+        "app/listings/page.tsx",
+        "app/listings/[id]/page.tsx"
+      ]
+    },
+    {
+      "name": "Offline mock mode from pinned fixtures",
+      "priority": "P1",
+      "status": "Verified",
+      "evidence": [
+        "lib/youcam/adapter.ts",
+        "scripts/clone-check.mjs",
+        "lib/tryon/contracts.ts",
+        "app/status/page.tsx",
+        "app/methods/page.tsx",
+        "lib/youcam/__tests__/adapter.test.ts"
+      ]
+    },
+    {
+      "name": "Session data deletion and short retention on buyer assets",
+      "priority": "P1",
+      "status": "Partial",
+      "evidence": [
+        "lib/tryon/contracts.ts"
+      ]
+    },
+    {
+      "name": "Copy-guard CI lint and automated accessibility check",
+      "priority": "P1",
+      "status": "Not Detected",
+      "evidence": []
+    },
+    {
+      "name": "Buyer watchlist of saved renders",
+      "priority": "P2",
+      "status": "Likely Implemented",
+      "evidence": [
+        "lib/tryon/watchlist.ts",
+        "components/Watchlist.tsx",
+        "components/TryOnRunner.tsx",
+        "app/watchlist/page.tsx",
+        "lib/tryon/contracts.ts"
+      ]
+    },
+    {
+      "name": "Readiness grade distribution across the demo catalogue",
+      "priority": "P2",
+      "status": "Likely Implemented",
+      "evidence": [
+        "components/ReadinessChecker.tsx",
+        "lib/listings/contracts.ts",
+        "lib/listings/published.ts",
+        "lib/listings/seeded-set.ts",
+        "app/listings/page.tsx"
+      ]
+    },
+    {
+      "name": "Shareable render permalink with label preserved",
+      "priority": "P2",
+      "status": "Not Detected",
+      "evidence": []
+    },
+    {
+      "name": "Additional garment categories beyond upper body",
+      "priority": "P2",
+      "status": "Verified",
+      "evidence": [
+        "lib/youcam/adapter.ts",
+        "lib/listings/categories.ts",
+        "lib/youcam/__tests__/adapter.test.ts"
+      ]
+    },
+    {
+      "name": "Seller accounts and persistent identity",
+      "priority": "P3",
+      "status": "Planned Only",
+      "evidence": []
+    },
+    {
+      "name": "Marketplace integration (listing import / embeddable widget)",
+      "priority": "P3",
+      "status": "Planned Only",
+      "evidence": []
+    },
+    {
+      "name": "Learned segmentation model for background suppression",
+      "priority": "P3",
+      "status": "Likely Implemented",
+      "evidence": [
+        "lib/readiness/analyse.ts",
+        "lib/normalise/normalise.ts"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "title": "Register on Devpost via 'Join Hackathon' before the deadline",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Create a free YouCam API account",
+      "status": "Likely"
+    },
+    {
+      "title": "Redeem the 1,000 free API units code (optional but provided)",
+      "status": "Likely"
+    },
+    {
+      "title": "At least one Perfect Corp. YouCam API integrated in a working app",
+      "status": "Likely"
+    },
+    {
+      "title": "Project runs consistently on its intended platform and matches the description",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "New build, or documented significant update made during the Submission Period",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Third-party SDKs/APIs/data properly licensed and authorized",
+      "status": "Verified"
+    },
+    {
+      "title": "Code repository URL provided with full source, assets and setup instructions",
+      "status": "Verified"
+    },
+    {
+      "title": "Repository is public with relevant licensing, or private and shared with contact_event@PerfectCorp.com",
+      "status": "Likely"
+    },
+    {
+      "title": "Text description explaining features, functionality and consumer/eCommerce value",
+      "status": "Likely"
+    },
+    {
+      "title": "Screenshots of the project included",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Demo video between 1 and 3 minutes showing the experience end-to-end",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Video explains which YouCam API(s) are used",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Video includes footage of the Project functioning on its target device",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Video publicly hosted on YouTube (preferred) or Vimeo with link on the submission form",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Video free of unlicensed third-party trademarks and copyrighted music/material",
+      "status": "Verified"
+    },
+    {
+      "title": "Working demo accessible free of charge to judges until the end of the Judging Period",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "All submission materials in English (or with English translation)",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Submission is original, solely owned work that does not infringe others' rights",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Submit all required fields on the 'Enter a Submission' page before Nov 2, 2026 11:45 am ET",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Commit to an exit interview and blog feature if selected as a winner",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Build beyond a surface-level API wrapper with an instantly understandable UX",
+      "status": "Missing"
+    },
+    {
+      "title": "Choose and clearly frame a track: Skin AI or eCommerce VTO",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Opt in to Special Awards at submission if eligible",
+      "status": "Manual Verification"
+    },
+    {
+      "title": "Optional: claim the Social Sharing Bonus before the submission deadline",
+      "status": "Manual Verification"
+    }
+  ],
+  "integrations": [
+    {
+      "name": "Perfect Corp. YouCam API",
+      "requiredByContest": "Yes",
+      "status": "Likely Integrated",
+      "risk": null
+    },
+    {
+      "name": "REST API (standard HTTP integration)",
+      "requiredByContest": "Yes",
+      "status": "Not Detected",
+      "risk": "Required technology REST API (standard HTTP integration) was not found in the repository (no package, import, environment variable or API call)."
+    }
+  ],
+  "gaps": [
+    {
+      "group": "P0 Missing",
+      "title": "Devpost submission package (description, screenshots, demo URL, testing instructions)",
+      "reason": "Mentioned in documentation only; no implementation was found."
+    },
+    {
+      "group": "P0 Missing",
+      "title": "1–3 minute YouTube demo video",
+      "reason": "Mentioned in documentation only; no implementation was found."
+    },
+    {
+      "group": "Contest Compliance Risks",
+      "title": "Sponsor integration risk: REST API (standard HTTP integration)",
+      "reason": "Required technology REST API (standard HTTP integration) was not found in the repository (no package, import, environment variable or API call)."
+    },
+    {
+      "group": "Functional Gaps",
+      "title": "Empirical calibration harness and threshold provenance",
+      "reason": "Mentioned in documentation only; no implementation was found."
+    },
+    {
+      "group": "Functional Gaps",
+      "title": "Silent-failure detection on returned renders",
+      "reason": "Logic found, but no screen or component was traced."
+    },
+    {
+      "group": "Functional Gaps",
+      "title": "Session data deletion and short retention on buyer assets",
+      "reason": "Logic found, but no screen or component was traced."
+    },
+    {
+      "group": "Functional Gaps",
+      "title": "Copy-guard CI lint and automated accessibility check",
+      "reason": "Not Detected"
+    },
+    {
+      "group": "Demo Risks",
+      "title": "Static data behind a live feature: lib/listings/published.ts",
+      "reason": "Server route(s) appear to serve this static data (app/api/consent/route.ts, app/api/listings/route.ts); no live processing was traced for it."
+    },
+    {
+      "group": "Demo Risks",
+      "title": "Static data behind a live feature: lib/youcam/fixtures/file-upload.response.json",
+      "reason": "Server route(s) appear to serve this static data (app/api/status/route.ts, app/api/tryon/route.ts); no live processing was traced for it."
+    },
+    {
+      "group": "Demo Risks",
+      "title": "Static data behind a live feature: lib/youcam/fixtures/task-create.response.json",
+      "reason": "Server route(s) appear to serve this static data (app/api/status/route.ts, app/api/tryon/route.ts); no live processing was traced for it."
+    },
+    {
+      "group": "Technical Cleanup",
+      "title": "Hard-coded localhost URL",
+      "reason": "Will break outside your machine (demo, judges, deployment)."
+    },
+    {
+      "group": "Technical Cleanup",
+      "title": "API route without error handling",
+      "reason": "A failing call will surface as an unhandled error during the demo."
+    }
+  ],
+  "nextActions": [
+    "Implement Devpost submission package (description, screenshots, demo URL, testing instructions)",
+    "Implement 1–3 minute YouTube demo video",
+    "Connect REST API (standard HTTP integration) to the primary workflow",
+    "Fix demo risk: Static data behind a live feature: lib/listings/published.ts",
+    "Fix demo risk: Static data behind a live feature: lib/youcam/fixtures/file-upload.response.json"
+  ],
+  "drift": [
+    {
+      "kind": "Expected But Missing",
+      "title": "P0 Devpost submission package (description, screenshots, demo URL, testing instructions)"
+    },
+    {
+      "kind": "Expected But Missing",
+      "title": "P0 1–3 minute YouTube demo video"
+    },
+    {
+      "kind": "Expected But Missing",
+      "title": "P1 Empirical calibration harness and threshold provenance"
+    },
+    {
+      "kind": "Expected But Missing",
+      "title": "P1 Copy-guard CI lint and automated accessibility check"
+    },
+    {
+      "kind": "Possible Scope Creep",
+      "title": "Scope drift"
+    }
+  ]
+}

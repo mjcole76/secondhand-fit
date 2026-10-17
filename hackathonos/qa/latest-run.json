@@ -1,0 +1,448 @@
+{
+  "run": 37,
+  "mode": "standard",
+  "status": "Passed",
+  "finishedAt": "2026-10-02T00:33:02.223Z",
+  "summary": {
+    "counts": {
+      "Passed": 27,
+      "Failed": 0,
+      "Blocked": 0,
+      "Needs Verification": 15,
+      "Skipped": 0,
+      "Manual": 19,
+      "Timed Out": 0
+    },
+    "total": 61,
+    "build": "Passed",
+    "typecheck": "Passed",
+    "runtime": "Running",
+    "p0": {
+      "passed": 26,
+      "failed": 0,
+      "total": 41
+    },
+    "primaryFlow": "Needs Attention",
+    "demoFlow": "Not Run",
+    "demoRuntimeSec": null,
+    "compliance": {
+      "passed": 3,
+      "unresolved": 4,
+      "manual": 13
+    },
+    "integrations": [
+      {
+        "name": "Perfect Corp. YouCam API",
+        "result": "Needs Verification",
+        "note": "Perfect Corp. YouCam API is likely implemented (static evidence), but the runtime call was not verified because paid API calls are disabled."
+      }
+    ],
+    "consoleErrors": 0,
+    "networkFailures": 0,
+    "regressions": [],
+    "issuesOpen": 43,
+    "headline": "Build passed · P0 26/41 passed · primary flow needs attention",
+    "runtime_": {
+      "sessionId": "cmuq8bmrf00e5v3fw2q8jyybq",
+      "health": "Healthy",
+      "routes": {
+        "healthy": 4,
+        "warning": 0,
+        "failed": 0,
+        "notTested": 3
+      },
+      "errors": 0,
+      "networkFailures": 0
+    },
+    "visual": {
+      "sessionId": "cmuq8bejp00btv3fwqqcs9079",
+      "viewports": {
+        "desktop": {
+          "screens": 3,
+          "issues": 20,
+          "important": 12
+        },
+        "large": {
+          "screens": 3,
+          "issues": 0,
+          "important": 0
+        }
+      },
+      "issues": 20,
+      "demo": {
+        "runtime": "Not Run",
+        "visual": "Not Run",
+        "stepsNeedingWork": []
+      },
+      "mobileRequired": true
+    }
+  },
+  "results": [
+    {
+      "test": "feature:cmunqgh0c0002v3r0u2y24bff",
+      "name": "P0 implementation evidence: Server-side YouCam Apparel VTO integration (upload → task → bounded polling)",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "feature:cmunqgh0c0003v3r0sdlmiial",
+      "name": "P0 implementation evidence: Seller readiness checker with specific retake instructions",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "feature:cmunqgh0c0004v3r0vwl7kn15",
+      "name": "P0 implementation evidence: Local normalisation of accepted garment images",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "feature:cmunqgh0d0005v3r09dhtn38y",
+      "name": "P0 implementation evidence: Try-on readiness grade on the listing",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "feature:cmunqgh0d0006v3r0f4wrnmmn",
+      "name": "P0 implementation evidence: Buyer consent gate enforced server-side",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "feature:cmunqgh0d0007v3r0gndata4m",
+      "name": "P0 implementation evidence: Buyer selfie capture and single render with honest progress",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "feature:cmunqgh0d0008v3r0zxs1ql65",
+      "name": "P0 implementation evidence: Readiness badge and preview-only honesty label on every render",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "feature:cmunqgh0d0009v3r08862g3id",
+      "name": "P0 implementation evidence: Blocked categories and published scope exclusions",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "feature:cmunqgh0d000av3r0bo66u7xi",
+      "name": "P0 implementation evidence: Unit budget guard with labelled precomputed fallback",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "feature:cmunqgh0d000bv3r0h7s02glj",
+      "name": "P0 implementation evidence: Seeded demo listing set with the bad flat-lay and its retake",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "feature:cmunqgh0d000cv3r01jwlzicd",
+      "name": "P0 implementation evidence: Public repository with README, setup instructions and licence",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "flow:primary:1:seller-opens-the-create-listing-page-and-uploads",
+      "name": "Workflow 1: Seller opens the Create Listing page and uploads a phone flat-lay photo of a garment.",
+      "result": "Manual",
+      "failure": "Dynamic route /listings/[id] needs a sample URL in test-data/routes.json."
+    },
+    {
+      "test": "flow:primary:2:browser-side-readiness-checks-run-on-the-image-g",
+      "name": "Workflow 2: Browser-side readiness checks run on the image (garment bounding box / framing, background separation, flatness / wrinkle proxy via edge density, occlusion and shadow proxies) and return a pass/fail per check.",
+      "result": "Manual",
+      "failure": "Dynamic route /listings/[id] needs a sample URL in test-data/routes.json."
+    },
+    {
+      "test": "flow:primary:4:when-checks-pass-the-server-normalises-the-accep",
+      "name": "Workflow 4: When checks pass, the server normalises the accepted image (auto-orient, crop to garment bounding box with padding, conservative background suppression, resize/encode to the documented VTO input constraints) and stores it with a computed readiness grade (A/B/C) and a per-check breakdown.",
+      "result": "Manual",
+      "failure": "Dynamic route /listings/[id] needs a sample URL in test-data/routes.json."
+    },
+    {
+      "test": "flow:primary:6:buyer-opens-the-listing-taps-try-it-on-reads-and",
+      "name": "Workflow 6: Buyer opens the listing, taps Try it on, reads and accepts a plain-language consent screen covering what is uploaded, where it is sent and when it is deleted.",
+      "result": "Manual",
+      "failure": "Dynamic route /listings/[id] needs a sample URL in test-data/routes.json."
+    },
+    {
+      "test": "flow:primary:7:buyer-uploads-or-captures-one-selfie-the-server-",
+      "name": "Workflow 7: Buyer uploads or captures one selfie; the server validates it, strips metadata, and checks the render cache and the API unit budget.",
+      "result": "Manual",
+      "failure": "Dynamic route /listings/[id] needs a sample URL in test-data/routes.json."
+    },
+    {
+      "test": "flow:primary:10:buyer-saves-the-render-to-a-watchlist-the-listin",
+      "name": "Workflow 10: Buyer saves the render to a watchlist; the listing's try-on counter increments and the seller sees try-on count plus readiness grade history on their listing dashboard, with rates suppressed at small sample sizes.",
+      "result": "Manual",
+      "failure": "Dynamic route /listings/[id] needs a sample URL in test-data/routes.json."
+    },
+    {
+      "test": "build",
+      "name": "Build succeeds",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "typecheck",
+      "name": "Type check passes",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "tests",
+      "name": "Existing test suite",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "runtime",
+      "name": "Application starts and responds",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "api:GET:/api/listings",
+      "name": "GET /api/listings responds without a server error",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "api:GET:/api/normalise/seeded",
+      "name": "GET /api/normalise/seeded responds without a server error",
+      "result": "Needs Verification",
+      "failure": "Not called: this route reaches Perfect Corp. YouCam API and paid API calls are disabled for QA."
+    },
+    {
+      "test": "api:GET:/api/status",
+      "name": "GET /api/status responds without a server error",
+      "result": "Needs Verification",
+      "failure": "Not called: this route reaches Perfect Corp. YouCam API and paid API calls are disabled for QA."
+    },
+    {
+      "test": "route:/",
+      "name": "Screen / renders without errors",
+      "result": "Needs Verification",
+      "failure": "Not visited: this screen calls Perfect Corp. YouCam API while rendering and paid API calls are disabled."
+    },
+    {
+      "test": "route:/listings",
+      "name": "Screen /listings renders without errors",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "route:/methods",
+      "name": "Screen /methods renders without errors",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "route:/sell/new",
+      "name": "Screen /sell/new renders without errors",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "route:/status",
+      "name": "Screen /status renders without errors",
+      "result": "Needs Verification",
+      "failure": "Not visited: this screen calls Perfect Corp. YouCam API while rendering and paid API calls are disabled."
+    },
+    {
+      "test": "route:/try",
+      "name": "Screen /try renders without errors",
+      "result": "Needs Verification",
+      "failure": "Not visited: this screen calls Perfect Corp. YouCam API while rendering and paid API calls are disabled."
+    },
+    {
+      "test": "route:/watchlist",
+      "name": "Screen /watchlist renders without errors",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "flow:primary:3:if-any-check-fails-the-seller-sees-up-to-three-s",
+      "name": "Workflow 3: If any check fails, the seller sees up to three specific, ordered retake instructions (e.g. 'lay the garment flat on a plain single-colour surface', 'move the garment fully inside the frame', 'remove the hanger/hand from the shot') and can retake without any API call being made.",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "flow:primary:5:listing-publishes-with-a-visible-try-on-ready-ba",
+      "name": "Workflow 5: Listing publishes with a visible 'try-on ready' badge showing the grade and the reason the grade is not higher.",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "flow:primary:8:server-calls-the-youcam-apparel-virtual-try-on-a",
+      "name": "Workflow 8: Server calls the YouCam Apparel Virtual Try-On API server-to-server (upload → create task → bounded polling with timeout and retry) using the normalised garment image and the buyer photo, with honest progress states in the UI.",
+      "result": "Needs Verification",
+      "failure": "Not visited: this screen calls Perfect Corp. YouCam API while rendering and paid API calls are disabled."
+    },
+    {
+      "test": "flow:primary:9:render-returns-and-is-displayed-with-the-readine",
+      "name": "Workflow 9: Render returns and is displayed with the readiness badge inherited from the garment, a persistent preview-only label, and an explicit statement that no fit, size or condition claim is being made; if a silent-failure signal is detected the render is labelled as unreliable rather than show",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "integration:perfect-corp-youcam-api",
+      "name": "Sponsor integration: Perfect Corp. YouCam API",
+      "result": "Needs Verification",
+      "failure": "Perfect Corp. YouCam API is likely implemented (static evidence), but the runtime call was not verified because paid API calls are disabled."
+    },
+    {
+      "test": "placeholders",
+      "name": "No placeholders on P0 screens",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "acceptance:bad-flat-lay-is-rejected-with-specific-instructi",
+      "name": "Acceptance: Bad flat-lay is rejected with specific instructions and zero API spend",
+      "result": "Needs Verification",
+      "failure": "The screen works, but the expected outcome needs a manual look."
+    },
+    {
+      "test": "acceptance:end-to-end-live-try-on-returns-a-labelled-render",
+      "name": "Acceptance: End-to-end live try-on returns a labelled render",
+      "result": "Needs Verification",
+      "failure": "The screen works, but the expected outcome needs a manual look."
+    },
+    {
+      "test": "acceptance:cache-prevents-duplicate-spend",
+      "name": "Acceptance: Cache prevents duplicate spend",
+      "result": "Needs Verification",
+      "failure": "The screen works, but the expected outcome needs a manual look."
+    },
+    {
+      "test": "acceptance:small-sample-suppression-in-seller-insights",
+      "name": "Acceptance: Small-sample suppression in seller insights",
+      "result": "Needs Verification",
+      "failure": "The screen works, but the expected outcome needs a manual look."
+    },
+    {
+      "test": "requirement:cmunneqc0003ev3x8mt0z6xz0",
+      "name": "Requirement: Register on Devpost via 'Join Hackathon' before the deadline",
+      "result": "Manual",
+      "failure": "Can't be verified automatically."
+    },
+    {
+      "test": "requirement:cmunneqc0003fv3x8bvs8enw0",
+      "name": "Requirement: Create a free YouCam API account",
+      "result": "Needs Verification",
+      "failure": "Perfect Corp. YouCam API appears to be called from app/api/listings/[id]/images/[variant]/route.ts and its result appears to reach the user-facing workflow (app/page.tsx)."
+    },
+    {
+      "test": "requirement:cmunneqc0003hv3x8xerzqzkf",
+      "name": "Requirement: At least one Perfect Corp. YouCam API integrated in a working app",
+      "result": "Needs Verification",
+      "failure": "Perfect Corp. YouCam API appears to be called from app/api/listings/[id]/images/[variant]/route.ts and its result appears to reach the user-facing workflow (app/page.tsx)."
+    },
+    {
+      "test": "requirement:cmunneqc0003iv3x8jru8xw7k",
+      "name": "Requirement: Project runs consistently on its intended platform and matches the description",
+      "result": "Manual",
+      "failure": "Check the final video against the contest limit."
+    },
+    {
+      "test": "requirement:cmunneqc0003jv3x8t4o9dpvg",
+      "name": "Requirement: New build, or documented significant update made during the Submission Period",
+      "result": "Manual",
+      "failure": "Can't be verified automatically."
+    },
+    {
+      "test": "requirement:cmunneqc0003kv3x8rk7x4ks3",
+      "name": "Requirement: Third-party SDKs/APIs/data properly licensed and authorized",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "requirement:cmunneqc0003lv3x8fymj343v",
+      "name": "Requirement: Code repository URL provided with full source, assets and setup instructions",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "requirement:cmunneqc0003mv3x8bmwubmc5",
+      "name": "Requirement: Repository is public with relevant licensing, or private and shared with contact_event@PerfectCorp.com",
+      "result": "Needs Verification",
+      "failure": "Perfect Corp. YouCam API appears to be called from app/api/listings/[id]/images/[variant]/route.ts and its result appears to reach the user-facing workflow (app/page.tsx)."
+    },
+    {
+      "test": "requirement:cmunneqc0003nv3x8cmqtdpbb",
+      "name": "Requirement: Text description explaining features, functionality and consumer/eCommerce value",
+      "result": "Needs Verification",
+      "failure": "8 page route(s) and run scripts (dev, start, build) are present."
+    },
+    {
+      "test": "requirement:cmunneqc0003ov3x85xncychs",
+      "name": "Requirement: Screenshots of the project included",
+      "result": "Manual",
+      "failure": "Can't be verified automatically."
+    },
+    {
+      "test": "requirement:cmunneqc0003pv3x8303etynj",
+      "name": "Requirement: Demo video between 1 and 3 minutes showing the experience end-to-end",
+      "result": "Manual",
+      "failure": "Check the final video against the contest limit."
+    },
+    {
+      "test": "requirement:cmunneqc0003qv3x8051yhs6v",
+      "name": "Requirement: Video explains which YouCam API(s) are used",
+      "result": "Manual",
+      "failure": "Check the final video against the contest limit."
+    },
+    {
+      "test": "requirement:cmunneqc0003rv3x8mxlup8l2",
+      "name": "Requirement: Video includes footage of the Project functioning on its target device",
+      "result": "Manual",
+      "failure": "Check the final video against the contest limit."
+    },
+    {
+      "test": "requirement:cmunneqc0003sv3x8lb0c0arl",
+      "name": "Requirement: Video publicly hosted on YouTube (preferred) or Vimeo with link on the submission form",
+      "result": "Manual",
+      "failure": "Check the final video against the contest limit."
+    },
+    {
+      "test": "requirement:cmunneqc0003tv3x8nisqb1za",
+      "name": "Requirement: Video free of unlicensed third-party trademarks and copyrighted music/material",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "test": "requirement:cmunneqc0003uv3x8vf8aupaa",
+      "name": "Requirement: Working demo accessible free of charge to judges until the end of the Judging Period",
+      "result": "Manual",
+      "failure": "Check the final video against the contest limit."
+    },
+    {
+      "test": "requirement:cmunneqc0003vv3x8g65x9sf5",
+      "name": "Requirement: All submission materials in English (or with English translation)",
+      "result": "Manual",
+      "failure": "Check the final video against the contest limit."
+    },
+    {
+      "test": "requirement:cmunneqc0003wv3x8odohuaza",
+      "name": "Requirement: Submission is original, solely owned work that does not infringe others' rights",
+      "result": "Manual",
+      "failure": "Can't be verified automatically."
+    },
+    {
+      "test": "requirement:cmunneqc0003xv3x8v64ydlmk",
+      "name": "Requirement: Submit all required fields on the 'Enter a Submission' page before Nov 2, 2026 11:45 am ET",
+      "result": "Manual",
+      "failure": "Can't be verified automatically."
+    },
+    {
+      "test": "requirement:cmunneqc0003yv3x84v55xt40",
+      "name": "Requirement: Commit to an exit interview and blog feature if selected as a winner",
+      "result": "Manual",
+      "failure": "Can't be verified automatically."
+    }
+  ]
+}

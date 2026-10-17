@@ -1,0 +1,6 @@
+{
+  "_note": "Values QA types into forms, matched by field name/label (e.g. \"url\", \"email\", \"text\"). Use fake demo data only.",
+  "url": "https://example.com/contest",
+  "text": "Sample QA input for the primary workflow",
+  "email": "qa@example.com"
+}

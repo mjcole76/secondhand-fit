@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "endpoint": "GET /s2s/v2.0/task/cloth/{task_id}",
+    "provenance": "V2 shape (data.task_status \"success\", data.results.url, a link valid about 2 hours) from the YouCam API documentation as summarised by the entrant. The result URL points at a builder-owned placeholder served from /public so mock mode performs zero outbound requests. Replace with a captured live response once a live render succeeds.",
+    "captured": null
+  },
+  "status": 200,
+  "data": {
+    "task_status": "success",
+    "results": {
+      "url": "/mock/mock-render.svg"
+    }
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "stage": "building",
+  "currentMilestone": null,
+  "packetVersion": 1,
+  "features": [
+    {
+      "name": "Server-side YouCam Apparel VTO integration (upload → task → bounded polling)",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "requirement",
+      "supportsLabel": "Mandatory: At least one Perfect Corp. YouCam API integrated in a working app"
+    },
+    {
+      "name": "Seller readiness checker with specific retake instructions",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "workflow",
+      "supportsLabel": "Workflow step 2–3: readiness checks and retake prompts before any API call"
+    },
+    {
+      "name": "Local normalisation of accepted garment images",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "workflow",
+      "supportsLabel": "Workflow step 4: accepted image normalised and stored"
+    },
+    {
+      "name": "Try-on readiness grade on the listing",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "workflow",
+      "supportsLabel": "Workflow step 5: listing publishes with a 'try-on ready' badge"
+    },
+    {
+      "name": "Buyer consent gate enforced server-side",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "workflow",
+      "supportsLabel": "Workflow step 6: buyer consents before try-on"
+    },
+    {
+      "name": "Buyer selfie capture and single render with honest progress",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "workflow",
+      "supportsLabel": "Workflow steps 7–9: selfie, server VTO call, render returns"
+    },
+    {
+      "name": "Readiness badge and preview-only honesty label on every render",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "criterion",
+      "supportsLabel": "Design — complete, coherent product experience; and Quality of the Idea — genuine understanding of the problem space"
+    },
+    {
+      "name": "Blocked categories and published scope exclusions",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "requirement",
+      "supportsLabel": "Mandatory: Use of the YouCam API is subject to YouCam's and Perfect Corp.'s Terms of Service"
+    },
+    {
+      "name": "Unit budget guard with labelled precomputed fallback",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "requirement",
+      "supportsLabel": "Mandatory: Working demo accessible free of charge to judges until the end of the Judging Period"
+    },
+    {
+      "name": "Seeded demo listing set with the bad flat-lay and its retake",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "requirement",
+      "supportsLabel": "Mandatory: Submission is original, solely owned work that does not infringe others' rights; and Project must function as depicted in the video"
+    },
+    {
+      "name": "Public repository with README, setup instructions and licence",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "requirement",
+      "supportsLabel": "Mandatory: Code repository URL with full source, assets and setup instructions; repository public with relevant licensing"
+    },
+    {
+      "name": "Devpost submission package (description, screenshots, demo URL, testing instructions)",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "requirement",
+      "supportsLabel": "Mandatory: Submit all required fields on the 'Enter a Submission' page before Nov 2, 2026 11:45 am ET"
+    },
+    {
+      "name": "1–3 minute YouTube demo video",
+      "priority": "P0",
+      "status": "Not Started",
+      "supports": "requirement",
+      "supportsLabel": "Mandatory: Demo video 1–3 minutes, explains the YouCam API used, shows the project functioning, publicly hosted on YouTube"
+    },
+    {
+      "name": "Empirical calibration harness and threshold provenance",
+      "priority": "P1",
+      "status": "Not Started",
+      "supports": "criterion",
+      "supportsLabel": "Technological Implementation — genuine effort and non-trivial, working implementation"
+    },
+    {
+      "name": "Silent-failure detection on returned renders",
+      "priority": "P1",
+      "status": "Not Started",
+      "supports": "criterion",
+      "supportsLabel": "Quality of the Idea — genuine understanding of the problem space; Potential Impact — solution addresses the stated problem"
+    },
+    {
+      "name": "Content-addressed render cache",
+      "priority": "P1",
+      "status": "Not Started",
+      "supports": "criterion",
+      "supportsLabel": "Technological Implementation — working, non-trivial implementation with cost control"
+    },
+    {
+      "name": "Public methods page documenting checks, thresholds and limitations",
+      "priority": "P1",
+      "status": "Not Started",
+      "supports": "criterion",
+      "supportsLabel": "Design — complete, coherent product experience; Potential Impact — credible, specific case"
+    },
+    {
+      "name": "Seller insights: try-on counts and grade history with small-sample suppression",
+      "priority": "P1",
+      "status": "Not Started",
+      "supports": "workflow",
+      "supportsLabel": "Workflow step 11: seller sees how many try-ons their listing generated"
+    },
+    {
+      "name": "Offline mock mode from pinned fixtures",
+      "priority": "P1",
+      "status": "Not Started",
+      "supports": "requirement",
+      "supportsLabel": "Mandatory: Repository contains all instructions required for the project to be functional"
+    },
+    {
+      "name": "Session data deletion and short retention on buyer assets",
+      "priority": "P1",
+      "status": "Not Started",
+      "supports": "criterion",
+      "supportsLabel": "Design — complete product experience; and consistency with the in-product consent promise"
+    },
+    {
+      "name": "Copy-guard CI lint and automated accessibility check",
+      "priority": "P1",
+      "status": "Not Started",
+      "supports": "criterion",
+      "supportsLabel": "Quality of the Idea — anti-overclaiming enforced mechanically rather than by convention"
+    },
+    {
+      "name": "Buyer watchlist of saved renders",
+      "priority": "P2",
+      "status": "Not Started",
+      "supports": "workflow",
+      "supportsLabel": "Workflow step 11: buyer saves the render to their watchlist"
+    },
+    {
+      "name": "Readiness grade distribution across the demo catalogue",
+      "priority": "P2",
+      "status": "Not Started",
+      "supports": "criterion",
+      "supportsLabel": "Design — coherent product experience and legible value in one frame"
+    },
+    {
+      "name": "Shareable render permalink with label preserved",
+      "priority": "P2",
+      "status": "Not Started",
+      "supports": "workflow",
+      "supportsLabel": "Workflow step 11: buyer keeps and refers back to the render"
+    },
+    {
+      "name": "Additional garment categories beyond upper body",
+      "priority": "P2",
+      "status": "Not Started",
+      "supports": "criterion",
+      "supportsLabel": "Potential Impact — broader coverage of real resale inventory"
+    },
+    {
+      "name": "Seller accounts and persistent identity",
+      "priority": "P3",
+      "status": "Not Started",
+      "supports": "workflow",
+      "supportsLabel": "Future: durable seller dashboard beyond the session-scoped MVP"
+    },
+    {
+      "name": "Marketplace integration (listing import / embeddable widget)",
+      "priority": "P3",
+      "status": "Not Started",
+      "supports": "workflow",
+      "supportsLabel": "Future: distribution inside the marketplaces where resale listings actually live"
+    },
+    {
+      "name": "Learned segmentation model for background suppression",
+      "priority": "P3",
+      "status": "Not Started",
+      "supports": "workflow",
+      "supportsLabel": "Future: improve workflow step 4 normalisation quality on hard photos"
+    }
+  ],
+  "requirements": [
+    {
+      "title": "Register on Devpost via 'Join Hackathon' before the deadline",
+      "importance": "Mandatory",
+      "status": "Verified"
+    },
+    {
+      "title": "Create a free YouCam API account",
+      "importance": "Mandatory",
+      "status": "Verified"
+    },
+    {
+      "title": "Redeem the 1,000 free API units code (optional but provided)",
+      "importance": "Optional",
+      "status": "Missing"
+    },
+    {
+      "title": "At least one Perfect Corp. YouCam API integrated in a working app",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Project runs consistently on its intended platform and matches the description",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "New build, or documented significant update made during the Submission Period",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Third-party SDKs/APIs/data properly licensed and authorized",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Code repository URL provided with full source, assets and setup instructions",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Repository is public with relevant licensing, or private and shared with contact_event@PerfectCorp.com",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Text description explaining features, functionality and consumer/eCommerce value",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Screenshots of the project included",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Demo video between 1 and 3 minutes showing the experience end-to-end",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Video explains which YouCam API(s) are used",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Video includes footage of the Project functioning on its target device",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Video publicly hosted on YouTube (preferred) or Vimeo with link on the submission form",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Video free of unlicensed third-party trademarks and copyrighted music/material",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Working demo accessible free of charge to judges until the end of the Judging Period",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "All submission materials in English (or with English translation)",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Submission is original, solely owned work that does not infringe others' rights",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Submit all required fields on the 'Enter a Submission' page before Nov 2, 2026 11:45 am ET",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Commit to an exit interview and blog feature if selected as a winner",
+      "importance": "Mandatory",
+      "status": "Missing"
+    },
+    {
+      "title": "Build beyond a surface-level API wrapper with an instantly understandable UX",
+      "importance": "Recommended",
+      "status": "Missing"
+    },
+    {
+      "title": "Choose and clearly frame a track: Skin AI or eCommerce VTO",
+      "importance": "Recommended",
+      "status": "Missing"
+    },
+    {
+      "title": "Opt in to Special Awards at submission if eligible",
+      "importance": "Optional",
+      "status": "Missing"
+    },
+    {
+      "title": "Optional: claim the Social Sharing Bonus before the submission deadline",
+      "importance": "Optional",
+      "status": "Missing"
+    }
+  ],
+  "openComplianceIssues": [
+    {
+      "severity": "Warning",
+      "title": "11 required submission asset(s) missing"
+    },
+    {
+      "severity": "Warning",
+      "title": "No feature targets \"Stage One viability screen (pass/fail)\""
+    },
+    {
+      "severity": "Critical",
+      "title": "At least one Perfect Corp. YouCam API integrated in a working app"
+    },
+    {
+      "severity": "Warning",
+      "title": "Project runs consistently on its intended platform and matches the description"
+    },
+    {
+      "severity": "Warning",
+      "title": "New build, or documented significant update made during the Submission Period"
+    },
+    {
+      "severity": "Warning",
+      "title": "Third-party SDKs/APIs/data properly licensed and authorized"
+    },
+    {
+      "severity": "Warning",
+      "title": "Code repository URL provided with full source, assets and setup instructions"
+    },
+    {
+      "severity": "Warning",
+      "title": "Repository is public with relevant licensing, or private and shared with contact_event@PerfectCorp.com"
+    },
+    {
+      "severity": "Warning",
+      "title": "Text description explaining features, functionality and consumer/eCommerce value"
+    },
+    {
+      "severity": "Warning",
+      "title": "Screenshots of the project included"
+    },
+    {
+      "severity": "Warning",
+      "title": "Demo video between 1 and 3 minutes showing the experience end-to-end"
+    },
+    {
+      "severity": "Warning",
+      "title": "Video explains which YouCam API(s) are used"
+    },
+    {
+      "severity": "Warning",
+      "title": "Video includes footage of the Project functioning on its target device"
+    },
+    {
+      "severity": "Warning",
+      "title": "Video publicly hosted on YouTube (preferred) or Vimeo with link on the submission form"
+    },
+    {
+      "severity": "Warning",
+      "title": "Video free of unlicensed third-party trademarks and copyrighted music/material"
+    },
+    {
+      "severity": "Warning",
+      "title": "Working demo accessible free of charge to judges until the end of the Judging Period"
+    },
+    {
+      "severity": "Warning",
+      "title": "All submission materials in English (or with English translation)"
+    },
+    {
+      "severity": "Critical",
+      "title": "Submission is original, solely owned work that does not infringe others' rights"
+    },
+    {
+      "severity": "Warning",
+      "title": "Submit all required fields on the 'Enter a Submission' page before Nov 2, 2026 11:45 am ET"
+    },
+    {
+      "severity": "Critical",
+      "title": "Commit to an exit interview and blog feature if selected as a winner"
+    },
+    {
+      "severity": "Warning",
+      "title": "P0 scope is large"
+    },
+    {
+      "severity": "Critical",
+      "title": "Required Devpost integration not verified in the build"
+    },
+    {
+      "severity": "Critical",
+      "title": "Required Perfect Corp. YouCam API integration not verified in the build"
+    },
+    {
+      "severity": "Critical",
+      "title": "YouCam API account (yce.perfectcorp.com/ai-api) is not in the P0 plan"
+    },
+    {
+      "severity": "Critical",
+      "title": "YouTube (or Vimeo; Youku per contest page) is not in the P0 plan"
+    },
+    {
+      "severity": "Critical",
+      "title": "Public or shared code repository (e.g., Git hosting) is not in the P0 plan"
+    }
+  ],
+  "lastUpdated": "2026-09-30T06:37:20.797Z",
+  "note": "Maintained by ContestForge (HackathonOS). Update statuses in ContestForge, then sync."
+}

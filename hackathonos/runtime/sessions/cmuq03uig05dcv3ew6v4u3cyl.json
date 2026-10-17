@@ -1,0 +1,35 @@
+{
+  "session": "cmuq03uig05dcv3ew6v4u3cyl",
+  "qaRun": "cmuq02rle054qv3ewaym9sylp",
+  "url": "http://localhost:64919",
+  "health": "Healthy",
+  "summary": {
+    "routes": {
+      "healthy": 4,
+      "warning": 0,
+      "failed": 0,
+      "notTested": 3
+    },
+    "errors": 0,
+    "errorGroups": 0,
+    "networkFailures": 0,
+    "apis": {
+      "total": 4,
+      "failing": 0
+    },
+    "primaryFlow": "Needs Attention",
+    "demoFlow": "Not Run",
+    "integrations": [
+      {
+        "name": "Perfect Corp. YouCam API",
+        "runtimeCall": "Not Tested",
+        "requirement": "Static evidence only — runtime not verified"
+      }
+    ],
+    "regressions": [],
+    "findings": 0,
+    "slowActions": 0,
+    "mode": "standard"
+  },
+  "note": "Runtime observations (method, path, status, timing). No headers, cookies, query strings or bodies are stored."
+}

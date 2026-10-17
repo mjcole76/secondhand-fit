@@ -1,0 +1,32 @@
+{
+  "name": "secondhand-fit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Try-on for resale listings, built on the Perfect Corp. YouCam Apparel Virtual Try-On API.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test .test-build/lib/youcam/__tests__/adapter.test.js",
+    "copy-guard": "node scripts/copy-guard.mjs",
+    "clone-check": "node scripts/clone-check.mjs",
+    "verify-upgrade": "node scripts/verify-upgrade.mjs"
+  },
+  "dependencies": {
+    "next": "^15.5.26",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

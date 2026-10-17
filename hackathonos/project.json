@@ -1,0 +1,33 @@
+{
+  "hackathonOsProjectId": "cmunqozaw0001v3hkdrv6mxum",
+  "projectName": "Secondhand Fit",
+  "folder": "secondhand-fit",
+  "mode": "new",
+  "framework": "Next.js",
+  "workspace": "Hackathon Projects",
+  "concept": {
+    "id": "cmunohjiu000fv3awx9ys0nr4",
+    "name": "Secondhand Fit",
+    "oneLiner": "Try-on for resale listings, where the only photo is a wrinkled flat-lay on someone's bedroom floor.",
+    "targetUser": "Buyers on peer-to-peer resale marketplaces, and the individual sellers listing one-of-one items with phone photos.",
+    "problem": "Resale is the fastest-growing part of apparel commerce and the hardest to shop: every item is unique, non-returnable in practice, and photographed as a flat-lay on a bed or hanging on a door. Buyers cannot picture it on themselves, so they either skip the item or buy and resell again. Sellers have no studio and no model, and marketplace try-on tools assume clean e-commerce product imagery that resale listings never have.",
+    "solution": "Secondhand Fit is a listing-side and buyer-side layer for resale. On the seller side, a guided capture flow turns a phone flat-lay into a VTO-ready garment image: the app checks flatness, background separation and garment framing, auto-crops, and reports a 'try-on readiness' grade with specific retake instructions before the listing goes live. On the buyer side, one consented selfie renders the item through YouCam Apparel VTO, with a readiness badge that tells the buyer how much to trust the render given the source photo quality. Every render carries a preview-only label and a hard exclusion on fit, sizing and condition claims.",
+    "coreWorkflow": "Seller uploads phone photo → readiness checks (flatness, background, framing, occlusion) with concrete retake prompts → accepted image normalised and stored with a readiness grade → listing publishes with a 'try-on ready' badge → buyer taps try-on, consents, uploads a selfie → server calls YouCam Apparel VTO with the normalised garment and the buyer photo → render returns with the readiness badge and honest label → buyer saves the render to their watchlist; seller sees how many try-ons their listing generated.",
+    "sponsorTechnology": "YouCam Apparel Virtual Try-On as the render engine, with the pre-processing pipeline built specifically to satisfy its input constraints."
+  },
+  "activeBuildId": "cmunpr2o20001v3bo5i6vqx8e",
+  "detected": {
+    "framework": "Unknown",
+    "packageManager": null,
+    "name": null,
+    "typescript": false,
+    "tailwind": false,
+    "prisma": false,
+    "sqlite": false,
+    "supabase": false,
+    "scripts": {},
+    "importantFiles": [],
+    "isEmpty": true,
+    "hasExistingClaudeMd": false
+  }
+}

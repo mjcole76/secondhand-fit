@@ -1,0 +1,13 @@
+{
+  "_meta": {
+    "endpoint": "GET /s2s/v2.0/task/cloth/{task_id}",
+    "provenance": "V2 shape (data.task_status \"error\") from the YouCam API documentation as summarised by the entrant. Whether a failed task carries error and error_code inside data or on the envelope is not pinned; the adapter reads both. Not captured from a live response. Used by the unit tests; not replayed by default mock mode.",
+    "captured": null
+  },
+  "status": 200,
+  "data": {
+    "task_status": "error",
+    "error": "mock: provider reported a task error",
+    "error_code": "error_no_shoulder"
+  }
+}

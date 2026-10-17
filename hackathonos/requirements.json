@@ -1,0 +1,352 @@
+[
+  {
+    "id": "cmunneqc0003ev3x8mt0z6xz0",
+    "title": "Register on Devpost via 'Join Hackathon' before the deadline",
+    "importance": "Mandatory",
+    "category": "eligibility",
+    "status": "Verified",
+    "verificationMethod": "Confirm registration status on the Hackathon Website / Devpost account",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003fv3x8bvs8enw0",
+    "title": "Create a free YouCam API account",
+    "importance": "Mandatory",
+    "category": "technology",
+    "status": "Verified",
+    "verificationMethod": "Log in to the YouCam API dashboard",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003gv3x8cvca0aj8",
+    "title": "Redeem the 1,000 free API units code (optional but provided)",
+    "importance": "Optional",
+    "category": "technology",
+    "status": "Missing",
+    "verificationMethod": "Check API unit balance in account dashboard",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003hv3x8xerzqzkf",
+    "title": "At least one Perfect Corp. YouCam API integrated in a working app",
+    "importance": "Mandatory",
+    "category": "technology",
+    "status": "Missing",
+    "verificationMethod": "Live API calls demonstrable in the running app and visible in source code",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003iv3x8jru8xw7k",
+    "title": "Project runs consistently on its intended platform and matches the description",
+    "importance": "Mandatory",
+    "category": "project",
+    "status": "Missing",
+    "verificationMethod": "End-to-end test on the target platform before submitting",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003jv3x8t4o9dpvg",
+    "title": "New build, or documented significant update made during the Submission Period",
+    "importance": "Mandatory",
+    "category": "project",
+    "status": "Missing",
+    "verificationMethod": "Include an explanation in the submission text; commit history showing work during the period",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003kv3x8rk7x4ks3",
+    "title": "Third-party SDKs/APIs/data properly licensed and authorized",
+    "importance": "Mandatory",
+    "category": "project",
+    "status": "Missing",
+    "verificationMethod": "License audit of dependencies and assets",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003lv3x8fymj343v",
+    "title": "Code repository URL provided with full source, assets and setup instructions",
+    "importance": "Mandatory",
+    "category": "repository",
+    "status": "Missing",
+    "verificationMethod": "Fresh-clone test following the README instructions",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003mv3x8bmwubmc5",
+    "title": "Repository is public with relevant licensing, or private and shared with contact_event@PerfectCorp.com",
+    "importance": "Mandatory",
+    "category": "repository",
+    "status": "Missing",
+    "verificationMethod": "Check repo visibility settings / collaborator invite confirmation",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003nv3x8cmqtdpbb",
+    "title": "Text description explaining features, functionality and consumer/eCommerce value",
+    "importance": "Mandatory",
+    "category": "submission",
+    "status": "Missing",
+    "verificationMethod": "Submission form field completed",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003ov3x85xncychs",
+    "title": "Screenshots of the project included",
+    "importance": "Mandatory",
+    "category": "asset",
+    "status": "Missing",
+    "verificationMethod": "Images uploaded to the Devpost submission",
+    "infoType": "Official",
+    "source": {
+      "type": "contest_page",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/"
+    }
+  },
+  {
+    "id": "cmunneqc0003pv3x8303etynj",
+    "title": "Demo video between 1 and 3 minutes showing the experience end-to-end",
+    "importance": "Mandatory",
+    "category": "demo",
+    "status": "Missing",
+    "verificationMethod": "Check final video runtime",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003qv3x8051yhs6v",
+    "title": "Video explains which YouCam API(s) are used",
+    "importance": "Mandatory",
+    "category": "demo",
+    "status": "Missing",
+    "verificationMethod": "Review video script/narration",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003rv3x8mxlup8l2",
+    "title": "Video includes footage of the Project functioning on its target device",
+    "importance": "Mandatory",
+    "category": "demo",
+    "status": "Missing",
+    "verificationMethod": "Review video content for live app footage",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003sv3x8lb0c0arl",
+    "title": "Video publicly hosted on YouTube (preferred) or Vimeo with link on the submission form",
+    "importance": "Mandatory",
+    "category": "demo",
+    "status": "Missing",
+    "verificationMethod": "Open the video link in a logged-out browser to confirm public visibility",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003tv3x8nisqb1za",
+    "title": "Video free of unlicensed third-party trademarks and copyrighted music/material",
+    "importance": "Mandatory",
+    "category": "demo",
+    "status": "Missing",
+    "verificationMethod": "Audit music/asset licenses used in the video",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003uv3x8vf8aupaa",
+    "title": "Working demo accessible free of charge to judges until the end of the Judging Period",
+    "importance": "Mandatory",
+    "category": "demo",
+    "status": "Missing",
+    "verificationMethod": "Verify deployed URL works from an anonymous session; keep hosting live through Nov 20, 2026",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003vv3x8g65x9sf5",
+    "title": "All submission materials in English (or with English translation)",
+    "importance": "Mandatory",
+    "category": "submission",
+    "status": "Missing",
+    "verificationMethod": "Language review of all submitted assets",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003wv3x8odohuaza",
+    "title": "Submission is original, solely owned work that does not infringe others' rights",
+    "importance": "Mandatory",
+    "category": "eligibility",
+    "status": "Missing",
+    "verificationMethod": "Self-audit of code provenance and asset licensing",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003xv3x8v64ydlmk",
+    "title": "Submit all required fields on the 'Enter a Submission' page before Nov 2, 2026 11:45 am ET",
+    "importance": "Mandatory",
+    "category": "submission",
+    "status": "Missing",
+    "verificationMethod": "Devpost submission confirmation email/status",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc0003yv3x84v55xt40",
+    "title": "Commit to an exit interview and blog feature if selected as a winner",
+    "importance": "Mandatory",
+    "category": "eligibility",
+    "status": "Missing",
+    "verificationMethod": "Acknowledge in submission/communications with organizers",
+    "infoType": "Official",
+    "source": {
+      "type": "contest_page",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/"
+    }
+  },
+  {
+    "id": "cmunneqc1003zv3x8y1hl07j7",
+    "title": "Build beyond a surface-level API wrapper with an instantly understandable UX",
+    "importance": "Recommended",
+    "category": "project",
+    "status": "Missing",
+    "verificationMethod": "First-time-user walkthrough test against the four judging criteria",
+    "infoType": "Official",
+    "source": {
+      "type": "contest_page",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/"
+    }
+  },
+  {
+    "id": "cmunneqc10040v3x89wwj52ml",
+    "title": "Choose and clearly frame a track: Skin AI or eCommerce VTO",
+    "importance": "Recommended",
+    "category": "project",
+    "status": "Missing",
+    "verificationMethod": "State the chosen track in the submission description",
+    "infoType": "Official",
+    "source": {
+      "type": "contest_page",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/"
+    }
+  },
+  {
+    "id": "cmunneqc10041v3x8m68n1xpt",
+    "title": "Opt in to Special Awards at submission if eligible",
+    "importance": "Optional",
+    "category": "eligibility",
+    "status": "Missing",
+    "verificationMethod": "Complete the relevant opt-in fields on the submission form",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  },
+  {
+    "id": "cmunneqc10042v3x8xcx0xgg3",
+    "title": "Optional: claim the Social Sharing Bonus before the submission deadline",
+    "importance": "Optional",
+    "category": "submission",
+    "status": "Missing",
+    "verificationMethod": "Claim form submitted; post meets all listed requirements",
+    "infoType": "Official",
+    "source": {
+      "type": "official_rules",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/rules"
+    }
+  }
+]

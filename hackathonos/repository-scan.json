@@ -1,0 +1,16 @@
+{
+  "lastScan": "2026-10-02T00:31:59.013Z",
+  "scanType": "standard",
+  "buildPacketVersion": 1,
+  "repositoryHash": "2a481b3a1cb0b7f58ae1f79eb8def70c223fa426db622a70fe393bf80463fd11",
+  "filesIndexed": 422,
+  "featuresVerified": 4,
+  "featuresLikely": 15,
+  "featuresPartial": 2,
+  "featuresMissing": 7,
+  "requirementsVerified": 3,
+  "requirementsMissing": 1,
+  "criticalRisks": 3,
+  "demoReadiness": "Not Ready",
+  "submissionReadiness": "Not Ready"
+}

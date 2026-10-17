@@ -1,0 +1,11 @@
+{
+  "_meta": {
+    "endpoint": "GET /s2s/v2.0/task/cloth/{task_id}",
+    "provenance": "V2 shape (data.task_status) from the YouCam API documentation as summarised by the entrant. Not captured from a live response. Replace with a captured live response once a live render succeeds.",
+    "captured": null
+  },
+  "status": 200,
+  "data": {
+    "task_status": "running"
+  }
+}
