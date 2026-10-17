@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { THEME_INIT_SCRIPT, ThemeToggle } from "@/components/ThemeToggle";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,7 +13,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    // The init script may set data-theme before React hydrates, so that one attribute can differ.
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <header className="site-header">
@@ -24,6 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <Link href="/sell/new">Sell</Link>
             <Link href="/try">Try it on</Link>
             <Link href="/watchlist">Watchlist</Link>
+            <ThemeToggle />
           </nav>
         </header>
         <main id="main-content" className="site-main">{children}</main>

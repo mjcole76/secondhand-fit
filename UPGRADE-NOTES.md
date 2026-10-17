@@ -5,6 +5,7 @@ October 16, 2026
 ## What changed
 
 - Dark desktop interface with responsive mobile layouts, a visual homepage, and simpler browsing.
+- Optional light mode (added October 17). Use the Light/Dark toggle in the header. Dark remains the default. The choice is remembered in the browser, and the page does not flash dark on load.
 - The homepage uses the creator's existing example. Gemini made the source person and jacket images. The creator used YouCam for the try-on. The original/try-on switch does not make an API call.
 - A two-column try-on workspace keeps the garment, buyer photo, progress, and result together. Long diagnostics, processing timestamps, and consent records are expandable.
 - Live results can be compared with the original buyer photo. Changing either input clears the old result. Downloaded previews retain their label and source-photo badge in a smaller band.
