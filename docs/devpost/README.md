@@ -21,6 +21,7 @@ on **Nov 1** to leave a margin. Nothing can be changed after the period ends.
 | [`testing-instructions.md`](testing-instructions.md) | Reviewer testing instructions, ready to paste |
 | [`screenshots.md`](screenshots.md) | What each screenshot in `screenshots/` shows, in upload order |
 | [`video-script.md`](video-script.md) | Shot-by-shot script for the 1–3 minute demo video |
+| [`voiceover.md`](voiceover.md) | The narration to read aloud, with on-screen cues |
 
 ## Field by field
 

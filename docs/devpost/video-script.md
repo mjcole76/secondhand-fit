@@ -1,5 +1,7 @@
 # Demo video script (target 2:45, limit 3:00)
 
+The full read-aloud narration is in [`voiceover.md`](voiceover.md).
+
 Rules this script follows: 1–3 minutes, public on YouTube, says and shows which YouCam API is used,
 shows the app working on desktop **and** a phone, no third-party brands or copyrighted music. Record
 on the deployed URL in live mode so the try-on is a real YouCam render.
