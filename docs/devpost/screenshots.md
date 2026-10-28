@@ -1,46 +1,37 @@
-# Devpost screenshots — shot list
+# Devpost screenshots
 
-The contest page requires screenshots of the project. It gives no minimum count or format (open
-question in `build-packet/03-contest-contract.md`); check the limits shown on the form's image
-gallery before uploading.
+Captured on 2026-10-28 from a production build (`npm run build && npm start`) in offline mock mode,
+at 1440 px wide (desktop) and 390 px wide (phone). The files are in `screenshots/`. Upload them in
+this order. Check the image limits shown on the Devpost form first.
 
-**No submission screenshot has been captured yet.** Last updated 2026-10-01.
+| # | File | Shows |
+|---|---|---|
+| 0 | `00-home.png` | Home page with the creator's existing YouCam example (labelled preview only) |
+| 1 | `01-rejection.png` | The seeded bad flat-lay rejected: four check scores, grade C and three ordered retake instructions, 0 API units spent |
+| 2 | `02-retake-before-after.png` | The seeded retake accepted (grade A) with the before/after of the server-prepared image and the try-on input limits |
+| 3 | `03-blocked-category.png` | Swimwear refused before any photo is requested, linked to the scope statement |
+| 4 | `04-listings.png` | Demo listings, each with its grade |
+| 5 | `05-listing-grade.png` | A grade B listing page with the grade, its meaning and the drawing's licence |
+| 6 | `06-consent.png` | The five-part consent statement shown before any photo is chosen |
+| 7 | `07-progress.png` | A try-on in progress, with real stages and elapsed time |
+| 8 | `08-render-labelled.png` | The finished preview with the preview-only label and grade burned into the image |
+| 9 | `09-methods.png` | The methods and scope page |
+| 10 | `10-status.png` | The status page: mode, budget and pinned API facts |
+| 11 | `11-mobile-retake.png` | Phone: the retake instructions on the seller page |
+| 12 | `12-mobile-listing.png` | Phone: a graded listing |
 
-## Shot list
+## Replace two shots after deploying
 
-The list follows `build-packet/16-demo-plan.md`. "Can be captured today" means the screen exists in
-the code as of the date above; it does not mean the shot is final, because the screens will change
-as the remaining features are built. Capture the final set from the deployed app.
+`07-progress.png` and `08-render-labelled.png` show the **mock** placeholder (clearly labelled "MOCK
+RENDER — offline fixture"). After the first live render on the deployed app, capture both again so
+they show a live YouCam result under "Source: live YouCam Apparel VTO render". Use a photo of
+yourself or of someone who has agreed to it, and add it to the asset register in `PROVENANCE.md`.
 
-| # | File name | Route | What it must show | Can be captured today |
-|---|---|---|---|---|
-| 1 | `01-rejection.png` | `/sell/new` | The seeded bad flat-lay with "Retake needed", the three retake instructions and the per-check scores | Yes |
-| 2 | `02-retake-accepted.png` | `/sell/new` | The seeded retake with "Photo accepted" | Yes |
-| 3 | `03-before-after.png` | `/sell/new` | The original photo next to the normalised garment image | No — normalisation is not built |
-| 4 | `04-listing-grade.png` | Listing page | A published listing with its readiness grade and the reason it is not higher | No — listing grades are not built |
-| 5 | `05-render.png` | `/try` | A live render with "Source: live YouCam Apparel VTO render" and the preview-only label legible | No — a live render has not been confirmed; today only the mock placeholder can be shown |
-| 6 | `06-budget-fallback.png` | `/try` | The precomputed example under the "Not a live result" banner | Partly — the fallback image is still a drawn placeholder |
-| 7 | `07-blocked-category.png` | `/sell/new` | A refused category with the reason and the link to the scope statement | Yes |
-| 8 | `08-methods.png` | `/methods` | The scope statement and the readiness checks section | Yes |
-| 9 | `09-seller-insights.png` | Seller dashboard | Try-on counts and grade history | No — seller insights (P1) are not built |
-| 10 | `10-mobile-sell.png` | `/sell/new` on a phone | The seller flow in a mobile browser | Yes |
-
-Leave out any shot whose feature does not ship. A screenshot of a screen that is not in the
-submitted app must not be uploaded.
+The person in `00-home.png`, `07-progress.png` and `08-render-labelled.png` is the creator-supplied,
+Gemini-generated demonstration image `public/demo/person.jpg` (see `PROVENANCE.md`). No real person
+appears.
 
 ## Capture rules
 
-1. Capture from the deployed demo URL, so the screenshots show what the judges will see.
-2. Use a clean browser window: no bookmarks bar, extensions, other tabs or personal information in
-   view.
-3. A mock or precomputed result must be visibly labelled as such in the shot. Never crop out the
-   "Source" banner, the "Not a live result" banner or the preview-only label.
-4. People: use only the entrant's own likeness or a person who has given written permission
-   (`PROVENANCE.md`, section 6, rule 4).
-5. Garments: use only photos already listed in the asset register (`PROVENANCE.md`, section 2).
-   Avoid visible brand logos and printed artwork.
-6. Add a row to the asset register for every screenshot that shows a photograph or a person.
-7. Save the files in `docs/devpost/screenshots/` under the names above.
-
-The images under `hackathonos/qa/screenshots/` are automated QA captures of the unfinished build.
-They are not submission screenshots.
+- Never crop out the "Source" banner, a "Not a live result" banner or the preview-only label.
+- No browser bookmarks, extensions, other tabs or personal information in view.

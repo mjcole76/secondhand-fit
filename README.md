@@ -514,7 +514,9 @@ The host is `https://yce-api-01.perfectcorp.com`, overridable with `YOUCAM_BASE_
 
 **Input limits, checked before any request is sent.** JPG, JPEG and PNG only: WebP is converted to
 JPEG with sharp, and any other type is refused. An image whose longest side is over 4096 px is
-scaled down to 4096 px. A file that is still 10 MB or more is refused.
+scaled down to 4096 px, and one under 512 × 384 px (the minimum other live integrations report from the
+clothes documentation) is scaled up to it. A file that is still 10 MB or more is refused. Each render
+is estimated at 2 units, the Clothes VTO price in the live unit catalogue.
 
 **Errors.** The API reports errors as `{status, error, error_code}`. Each documented code
 (`error_no_shoulder`, `error_large_face_angle`, `exceed_max_filesize`, `invalid_parameter`,
@@ -550,7 +552,7 @@ npm run test
 ```
 
 `lib/youcam/__tests__/adapter.test.ts` checks the pinned fixtures against the V2 shapes, that each
-of the eleven error codes has its own message, the input checks (WebP converted, other types
+of the thirteen error codes has its own message, the input checks (WebP converted, other types
 refused, long side scaled to 4096 px, 10 MB refused) and the live request contract: the Bearer
 header on every API request, the four V2 paths and nothing else, the upload sent with exactly the
 returned headers, the task body without `template_id`, and a mock-mode try-on with zero outbound
@@ -597,11 +599,10 @@ in the repository.
 
 ## Next build steps
 
-Threshold calibration against live API runs, the normalised photo on the listing page,
-try-on from a listing with the listing's normalised photo and grade on the render, and
-Prisma-backed persistence for the ledger, listings, readiness runs, normalised images, consent
-records, renders and the watchlist.
-See `build-packet/13-build-sequence.md`.
+Seller insights (try-on counts and grade history), threshold calibration against live API runs,
+a content-addressed render cache, and durable storage (for example Prisma) for the ledger,
+listings, normalised images, consent records, renders and the watchlist. See
+`build-packet/13-build-sequence.md`.
 
 ## Originality and provenance
 
@@ -613,27 +614,53 @@ committed) and the entrant's sign-off checklist, which must be completed before 
 
 ## Publishing the repository
 
-The contest requires a repository URL with all source, assets and setup instructions, either public
-with a licence or private and shared with contact_event@PerfectCorp.com. This project has not been
-pushed to a Git host yet. Before the first push:
+The source is at https://github.com/mjcole76/secondhand-fit. The contest needs the repository either
+public with a licence (MIT, see `LICENSE`) or private and shared with contact_event@PerfectCorp.com.
+Before submitting:
 
-1. Confirm the copyright line in `LICENSE` names the entrant.
-2. Check that `.env` is not staged (`git status`); `.gitignore` excludes `.env` and `.env.*` and
+1. Make the repository public (GitHub: Settings → General → Danger Zone → Change visibility), or
+   add contact_event@PerfectCorp.com as a collaborator.
+2. Check that `.env` is not committed (`git status`); `.gitignore` excludes `.env` and `.env.*` and
    keeps `.env.example`.
-3. Decide whether `build-packet/` and `hackathonos/` are published (open item in `PROVENANCE.md`).
-4. Run `npm run clone-check` and fix anything it reports.
-5. Push to a public repository, then follow [Setup](#setup) from a fresh clone on another machine
-   to confirm nothing outside the repository is needed.
+3. Run `npm run clone-check` and fix anything it reports.
+4. Open the repository URL in a private browser window to confirm judges can see it.
+
+## Deploying the demo
+
+The contest needs a working demo that judges can open free of charge until the end of the Judging
+Period. Secondhand Fit keeps listings, consent records, the unit ledger and render ids in server
+memory, so deploy it as **one long-running Node.js process**. A serverless host (one function
+instance per request) would lose the consent record between the consent call and the try-on call.
+
+`render.yaml` deploys it on [Render](https://render.com) as a single web service:
+
+1. In Render, choose **New → Blueprint** and connect this repository.
+2. When asked for `YOUCAM_API_KEY`, paste the API Key from https://yce.perfectcorp.com/ai-api. Leave
+   it empty to deploy in offline mock mode (no units spent; renders are labelled as mock).
+3. Wait for the build, then open the service URL and check `/api/health` and `/status`.
+4. Run one try-on on the deployed URL and confirm `/status` reports a live render. Then follow
+   [Verifying the YouCam integration](#verifying-the-youcam-integration).
+
+Notes:
+
+- The free plan sleeps after about 15 minutes idle, and the first request after that takes up to a
+  minute. A restart clears in-memory listings published by visitors; the seeded demo listings are
+  rebuilt on every start, so the judge walkthrough always works. The paid "starter" plan stays
+  awake for the Judging Period.
+- `RENDER_ID_SECRET` is generated once by Render so render ids survive restarts.
+- Keep `YOUCAM_UNIT_BUDGET` below the units left on the account, and set
+  `YOUCAM_UNITS_SPENT_BASELINE` to the units already spent, so the budget guard falls back to the
+  labelled precomputed example before the account runs out.
+- Any other host works the same way: Node.js 20.9 or later, `npm ci && npm run build`, then
+  `npm start` (Next.js reads the `PORT` environment variable).
 
 ## Devpost submission package
 
-`docs/devpost/` holds the draft of the Devpost entry: the field-by-field table and pre-submission
-checklist (`README.md`), the description (`description.md`), the reviewer testing instructions
-(`testing-instructions.md`) and the screenshot shot list (`screenshots.md`). It is a draft only. The
-entry has not been created on Devpost, no submission screenshot has been captured, and the demo,
-repository and video URLs are not set, because the app is not deployed, the repository is not
-published and the video is not recorded. The description marks every unbuilt feature as PENDING;
-those blocks must be confirmed or deleted before the text is pasted into the form.
+`docs/devpost/` holds the Devpost entry, ready to paste: the field-by-field table and
+pre-submission checklist (`README.md`), the description (`description.md`), the reviewer testing
+instructions (`testing-instructions.md`), the screenshot list (`screenshots.md`, captured images in
+`screenshots/`) and the demo video script (`video-script.md`). The demo and video URLs are filled in
+once the app is deployed and the video is published.
 
 ## Licence
 
@@ -650,5 +677,4 @@ are not part of the application; see `PROVENANCE.md`, section 5.
 The app shows the same facts at `/methods#source` (**Source and licence** in the footer): the
 licence, the Node.js version and the offline mock-mode setup commands, so someone who finds the
 deployed app can run it from a clone. The licence and Node.js version are read from `package.json`.
-Once the repository is published, add its URL as `"repository"` in `package.json` and the page
-links to it; until then the page says that there is no public link yet.
+The repository link on that page comes from `"repository"` in `package.json`.

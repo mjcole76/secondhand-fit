@@ -191,6 +191,17 @@ describe("pinned V2 fixtures", () => {
     assert.equal(status.error, YOUCAM_ERROR_MESSAGES.error_inference);
   });
 
+  test("task status error: a code in data.error (text in error_message) gets its own message", () => {
+    const status = parseTaskStatus({ task_status: "error", error: "error_no_face", error_message: "No face found" });
+    assert.equal(status.errorCode, "error_no_face");
+    assert.equal(status.error, YOUCAM_ERROR_MESSAGES.error_no_face);
+  });
+
+  test("task status error: a sentence in data.error is not mistaken for a code", () => {
+    const status = parseTaskStatus({ task_status: "error", error: "Something went wrong" });
+    assert.equal(status.errorCode, undefined);
+  });
+
   test("success without data.results.url is reported as a failure, not a clean success", () => {
     const status = parseTaskStatus({ task_status: "success", results: {} });
     assert.equal(status.state, "failed");
@@ -220,9 +231,11 @@ describe("documented error codes", () => {
     "error_multiple_people",
     "error_unsupport_ratio",
     "unknown_internal_error",
+    "error_no_face",
+    "error_src_face_too_small",
   ];
 
-  test("all eleven are pinned", () => {
+  test("all thirteen are pinned", () => {
     assert.deepEqual([...YOUCAM_ERROR_CODES].sort(), [...documented].sort());
   });
 
@@ -253,7 +266,7 @@ describe("documented error codes", () => {
 describe("pre-upload input checks", () => {
   test("a JPEG inside the limits is sent unchanged", async () => {
     forbidNetwork();
-    const jpeg = await image("jpeg", 64, 48);
+    const jpeg = await image("jpeg", 640, 480);
     const out = await prepareImageInput(jpeg, "Garment image");
     assert.equal(out.contentType, "image/jpeg");
     assert.deepEqual(out.bytes, jpeg);
@@ -263,7 +276,7 @@ describe("pre-upload input checks", () => {
 
   test("a PNG inside the limits is sent unchanged", async () => {
     forbidNetwork();
-    const png = await image("png", 64, 48);
+    const png = await image("png", 640, 480);
     const out = await prepareImageInput(png, "Garment image");
     assert.equal(out.contentType, "image/png");
     assert.deepEqual(out.bytes, png);
@@ -272,11 +285,21 @@ describe("pre-upload input checks", () => {
 
   test("WebP is converted to JPEG with sharp", async () => {
     forbidNetwork();
-    const out = await prepareImageInput(await image("webp", 64, 48), "Garment image");
+    const out = await prepareImageInput(await image("webp", 640, 480), "Garment image");
     assert.equal(out.contentType, "image/jpeg");
     assert.equal(sniffImageMime(out.bytes), "image/jpeg");
-    assert.deepEqual([out.width, out.height], [64, 48]);
+    assert.deepEqual([out.width, out.height], [640, 480]);
     assert.ok(out.changes.includes("converted from WebP to JPEG"));
+    assert.equal(calls.length, 0);
+  });
+
+  test("an image under 512 × 384 px is scaled up, keeping its shape", async () => {
+    forbidNetwork();
+    const out = await prepareImageInput(await image("png", 392, 468), "Garment image");
+    assert.ok(Math.min(out.width, out.height) >= YOUCAM_PINNED.input.minSidePx);
+    assert.ok(Math.max(out.width, out.height) >= YOUCAM_PINNED.input.minLongSidePx);
+    assert.ok(Math.abs(out.width / out.height - 392 / 468) < 0.01);
+    assert.ok(out.changes.some((c) => c.startsWith("scaled up")));
     assert.equal(calls.length, 0);
   });
 

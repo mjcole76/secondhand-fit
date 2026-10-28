@@ -205,7 +205,8 @@ function sampleMap(map: Float32Array, w: number, h: number, gx: number, gy: numb
 /** Output size: longer side at most outputMaxSidePx, shorter side at least the VTO minimum. */
 function outputSize(cw: number, ch: number): { width: number; height: number; scale: number } {
   let scale = Math.min(1, N.outputMaxSidePx / Math.max(cw, ch));
-  if (Math.min(cw, ch) * scale < YOUCAM_PINNED.input.minSidePx) scale = YOUCAM_PINNED.input.minSidePx / Math.min(cw, ch);
+  const I = YOUCAM_PINNED.input;
+  scale = Math.max(scale, I.minSidePx / Math.min(cw, ch), I.minLongSidePx / Math.max(cw, ch));
   return { width: Math.max(1, Math.round(cw * scale)), height: Math.max(1, Math.round(ch * scale)), scale };
 }
 
@@ -299,9 +300,12 @@ function checkConstraints(width: number, height: number, bytes: number): Constra
     {
       id: "dimensions",
       label: "Image sides",
-      limit: `${I.minSidePx}–${I.maxSidePx} px`,
+      limit: `at least ${I.minLongSidePx} × ${I.minSidePx} px, at most ${I.maxSidePx} px per side`,
       actual: `${width} × ${height} px`,
-      ok: Math.min(width, height) >= I.minSidePx && Math.max(width, height) <= I.maxSidePx,
+      ok:
+        Math.min(width, height) >= I.minSidePx &&
+        Math.max(width, height) >= I.minLongSidePx &&
+        Math.max(width, height) <= I.maxSidePx,
     },
     {
       id: "bytes",
@@ -390,8 +394,8 @@ export function normaliseGarmentImage(
       applied: size.scale !== 1,
       detail:
         size.scale === 1
-          ? `Kept at ${grid.width} × ${grid.height} px: already inside ${I.minSidePx}–${I.maxSidePx} px per side.`
-          : `Scaled ${size.scale < 1 ? "down" : "up"} to ${grid.width} × ${grid.height} px (longer side at most ${N.outputMaxSidePx} px, every side ${I.minSidePx}–${I.maxSidePx} px).`,
+          ? `Kept at ${grid.width} × ${grid.height} px: already between ${I.minLongSidePx} × ${I.minSidePx} px and ${I.maxSidePx} px per side.`
+          : `Scaled ${size.scale < 1 ? "down" : "up"} to ${grid.width} × ${grid.height} px (longer side at most ${N.outputMaxSidePx} px, at least ${I.minLongSidePx} × ${I.minSidePx} px).`,
     },
     {
       id: "encode",

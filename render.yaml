@@ -1,0 +1,30 @@
+# One-click deploy on Render (https://render.com): New > Blueprint > pick this repository.
+#
+# Secondhand Fit keeps listings, consent records, the unit ledger and render ids in server memory,
+# so it must run as ONE long-running Node.js process. Do not scale it past one instance, and do not
+# deploy it to a serverless host: a consent recorded on one instance would be missing on another.
+services:
+  - type: web
+    name: secondhand-fit
+    runtime: node
+    plan: free # free instances sleep when idle and lose in-memory state; "starter" stays awake
+    numInstances: 1
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      # Paste the API key from https://yce.perfectcorp.com/ai-api when Render asks. Leave it empty
+      # to run the public demo in offline mock mode (no API units spent).
+      - key: YOUCAM_API_KEY
+        sync: false
+      - key: YOUCAM_MOCK
+        value: "false"
+      - key: YOUCAM_UNIT_BUDGET
+        value: "900"
+      - key: TRYON_SESSION_RENDER_CAP
+        value: "5"
+      # Signs render ids. Render generates a random value once, so ids survive restarts.
+      - key: RENDER_ID_SECRET
+        generateValue: true

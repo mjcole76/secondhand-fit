@@ -181,11 +181,12 @@ branding, text or code from those projects are used in Secondhand Fit.
 
 These are the points this audit could not close from inside the repository.
 
-- [ ] **Repository licence.** `LICENSE` (MIT) was added on 2026-10-01, and "same as the repository"
+- [x] **Repository licence.** `LICENSE` (MIT) was added on 2026-10-01, and "same as the repository"
       in section 2 and `public/mock/LICENSE.md` now means MIT. The entrant still has to confirm the
-      choice of MIT and replace the copyright holder "The Secondhand Fit authors" with the
-      entrant's own name before the repository is published.
-- [ ] **Public repository.** The project has not been pushed to a Git host. The contest needs a
+      choice of MIT. Done 2026-10-28: the copyright holder is now "Marshall Coleman"; the entrant
+      should confirm the name.
+- [ ] **Public repository.** Pushed to https://github.com/mjcole76/secondhand-fit on 2026-10-17, but
+      the repository is still private: make it public before submitting. The contest needs a
       public repository with this licence, or a private one shared with
       contact_event@PerfectCorp.com (`README.md`, "Publishing the repository").
 - [ ] **Seeded demo photos.** The seeded demo listing set was built on 2026-10-01 from drawings made
@@ -204,8 +205,8 @@ These are the points this audit could not close from inside the repository.
       permits this use, including any restricted garment categories. The in-product refused list
       (`lib/listings/categories.ts`, published at `/methods#scope`) currently holds the project's own
       exclusions only and states that this check is outstanding.
-- [ ] **Version history.** The project is not yet under version control, so the dates in section 1
-      are not independently evidenced. Commit history in the public repository will provide that.
+- [x] **Version history.** The project is under Git at https://github.com/mjcole76/secondhand-fit;
+      its commit history evidences the dates in section 1.
 
 ## Entrant confirmation
 

@@ -4,6 +4,10 @@
   "private": true,
   "description": "Try-on for resale listings, built on the Perfect Corp. YouCam Apparel Virtual Try-On API.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjcole76/secondhand-fit.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

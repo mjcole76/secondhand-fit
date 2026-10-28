@@ -92,8 +92,13 @@ export const YOUCAM_PINNED = {
     allowedMime: ["image/jpeg", "image/png"] as const,
     /** Accepted from the browser, converted to JPEG with sharp before upload. */
     convertToJpeg: ["image/webp"] as const,
-    /** Our own floor for the normaliser, not a documented provider limit. */
-    minSidePx: 256,
+    /**
+     * Smallest accepted image: 512 × 384 px (shorter side at least 384, longer side at least 512),
+     * as reported from the YouCam clothes documentation by other live integrations. Smaller images
+     * are scaled up before upload.
+     */
+    minSidePx: 384,
+    minLongSidePx: 512,
     maxSidePx: 4096,
     /** Decoded pixel count above which an input is refused (decompression-bomb guard). Our own limit. */
     maxInputPixels: 50_000_000,
@@ -115,8 +120,11 @@ export const YOUCAM_PINNED = {
     /** The documented lifetime of data.results.url. */
     resultUrlValidMs: 2 * 60 * 60 * 1000,
   },
-  /** Units per render. Recorded as an ESTIMATE until observed spend is captured from a live run. */
-  estimatedUnitCost: 1,
+  /**
+   * Units per render. The live unit catalogue lists Clothes VTO at 2 units per successful result.
+   * Still an ESTIMATE until observed spend is captured from a live run.
+   */
+  estimatedUnitCost: 2,
   /** How long a feature-cost answer is reused before the API is asked again. Our own choice. */
   featureCostTtlMs: 60 * 60 * 1000,
   /** Version tag included in the render cache key when caching lands (P1). */
@@ -148,6 +156,8 @@ export const YOUCAM_ERROR_CODES = [
   "error_multiple_people",
   "error_unsupport_ratio",
   "unknown_internal_error",
+  "error_no_face",
+  "error_src_face_too_small",
 ] as const;
 export type YouCamErrorCode = (typeof YOUCAM_ERROR_CODES)[number];
 
@@ -169,6 +179,9 @@ export const YOUCAM_ERROR_MESSAGES: Record<YouCamErrorCode, string> = {
   error_unsupport_ratio:
     "The shape of one of the images (its width compared with its height) is not supported by the YouCam API. Use a photo closer to a standard portrait or square shape.",
   unknown_internal_error: "The YouCam API had an internal error and no render was made. Please try again in a moment.",
+  error_no_face: "No face was found in your photo. Retake it facing the camera, with your face clearly visible.",
+  error_src_face_too_small:
+    "Your face is too small in the photo. Retake it closer to the camera, from the waist up.",
 };
 
 export function isYouCamErrorCode(code: unknown): code is YouCamErrorCode {
@@ -428,17 +441,24 @@ export async function prepareImageInput(received: Uint8Array, label: string): Pr
 
   const convert = (I.convertToJpeg as readonly string[]).includes(sniffed);
   const tooLong = Math.max(meta.width, meta.height) > I.maxSidePx;
+  const upScale = Math.max(1, I.minSidePx / Math.min(meta.width, meta.height), I.minLongSidePx / Math.max(meta.width, meta.height));
+  const tooSmall = upScale > 1;
   let bytes: Uint8Array = received;
   const contentType: AllowedMime = sniffed === "image/png" ? "image/png" : "image/jpeg";
   let width = meta.width;
   let height = meta.height;
   const changes: string[] = [];
 
-  if (convert || tooLong) {
+  if (convert || tooLong || tooSmall) {
     try {
       let pipeline = sharp(input, { limitInputPixels: I.maxInputPixels }).autoOrient();
       if (tooLong) {
         pipeline = pipeline.resize({ width: I.maxSidePx, height: I.maxSidePx, fit: "inside", withoutEnlargement: true });
+      } else if (tooSmall) {
+        // Scale so the shorter side reaches its target. The shorter side is the same before and after
+        // auto-orientation, so this keeps the aspect ratio of a rotated phone photo.
+        const shortSide = Math.ceil(Math.min(meta.width, meta.height) * upScale);
+        pipeline = pipeline.resize({ width: shortSide, height: shortSide, fit: "outside" });
       }
       pipeline =
         contentType === "image/png"
@@ -453,6 +473,7 @@ export async function prepareImageInput(received: Uint8Array, label: string): Pr
     }
     if (convert) changes.push("converted from WebP to JPEG");
     if (tooLong) changes.push(`scaled down to ${width} × ${height} px (longest side at most ${I.maxSidePx} px)`);
+    if (tooSmall) changes.push(`scaled up to ${width} × ${height} px (at least ${I.minLongSidePx} × ${I.minSidePx} px)`);
   }
 
   if (bytes.length >= I.maxBytes) {
@@ -491,20 +512,31 @@ interface ProviderEnvelope<T> {
   data?: T;
   error?: string;
   error_code?: string;
+  error_message?: string;
   message?: string;
 }
 
+/** A snake_case token such as "error_no_shoulder", as opposed to a sentence. */
+const ERROR_CODE_SHAPE = /^[a-z][a-z0-9_]{2,63}$/;
+
+/**
+ * The provider's error code. Read from error_code when present; failed tasks have been seen to put
+ * the code in `error` (with the text in `error_message`), so a code-shaped `error` is used next.
+ */
 function providerErrorCode(body: unknown): string | undefined {
   if (!body || typeof body !== "object") return undefined;
-  const code = (body as ProviderEnvelope<unknown>).error_code;
-  return typeof code === "string" && code ? code : undefined;
+  const b = body as ProviderEnvelope<unknown>;
+  if (typeof b.error_code === "string" && b.error_code) return b.error_code;
+  if (typeof b.error === "string" && ERROR_CODE_SHAPE.test(b.error) && b.error.includes("_")) return b.error;
+  return undefined;
 }
 
 function providerReason(body: unknown, fallback: string): string {
   if (body && typeof body === "object") {
     const b = body as ProviderEnvelope<unknown>;
     const code = providerErrorCode(body);
-    const text = typeof b.error === "string" && b.error ? b.error : typeof b.message === "string" ? b.message : "";
+    const candidates = [b.error, b.error_message, b.message].filter((t): t is string => typeof t === "string" && t !== "" && t !== code);
+    const text = candidates[0] ?? "";
     if (code || text) return redactSecrets([code, text].filter(Boolean).join(": "));
   }
   return fallback;
