@@ -111,7 +111,9 @@ YOUCAM_MOCK=true npm run dev
 The banner reason then reads "YOUCAM_MOCK=true" instead of "YOUCAM_API_KEY is not set".
 
 On Windows, `run-dev.bat` starts the same development server on port 3001 instead. It runs
-`npm ci` itself on first use and always uses the project's own Next.js. If port 3000 is taken,
+`npm ci` itself on first use, always uses the project's own Next.js, and opens the app in your
+browser. Double-click `create-desktop-shortcut.bat` once to put a "Secondhand Fit" shortcut to it
+on your desktop. If port 3000 is taken,
 `npm run dev -- -p 3001` does the same on any system; use that port in the URLs below.
 
 Mock mode runs the same way from a production build: `npm run build`, then `npm run start`.

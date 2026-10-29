@@ -36,6 +36,8 @@ if not errorlevel 1 (
 )
 
 echo Starting Secondhand Fit on http://localhost:%PORT% ...
+rem Open the browser once the server has had a few seconds to start.
+start "" /b cmd /c "ping -n 9 127.0.0.1 >nul & start "" http://localhost:%PORT%"
 echo Press Ctrl+C to stop the server.
 node node_modules\next\dist\bin\next dev -p %PORT%
 
