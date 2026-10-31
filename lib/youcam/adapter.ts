@@ -130,7 +130,7 @@ export const YOUCAM_PINNED = {
   /** Version tag included in the render cache key when caching lands (P1). */
   modelParamVersion: "apparel-vto/v2.0/cloth/2026-10-01",
   verification: {
-    liveRenderConfirmed: false,
+    liveRenderConfirmed: true, // First live render from the deployed app: 2026-10-31.
     note:
       "V2 endpoint paths, Bearer auth, task body fields, the category enum, the error codes and the input limits are taken from the YouCam API documentation and must be confirmed by a live render before the demo. The feature-cost response shape and the placement of error_code inside a failed task's data are not documented in the summary used here and are read defensively.",
   },

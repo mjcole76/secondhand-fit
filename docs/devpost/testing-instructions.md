@@ -5,7 +5,7 @@ through the steps once on the deployed URL in a private browser window.
 
 ## Access
 
-- Working demo: NOT SET
+- Working demo: https://secondhand-fit.onrender.com
 - Code repository: https://github.com/mjcole76/secondhand-fit
 - No account, login or payment is needed. Nothing has to be installed.
 - The demo may take up to a minute to wake on the first visit.

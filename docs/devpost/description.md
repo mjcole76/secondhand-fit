@@ -1,8 +1,8 @@
 # Devpost description
 
 Paste-ready text for the Devpost project form. Every statement below describes code that is in this
-repository and was checked against the running app on 2026-10-28. Before pasting, confirm the one
-item marked **CHECK** against the deployed app.
+repository and was checked against the running app, including a live render on the deployed app
+(https://secondhand-fit.onrender.com) on 2026-10-31.
 
 ## Project name
 
@@ -149,7 +149,3 @@ not to call it, and being clear about what comes back.
 - An embeddable try-on button or listing import for existing resale marketplaces.
 - Garment categories beyond the upper body.
 
----
-
-**CHECK before pasting:** "Render" in *Built with* assumes the app was deployed with `render.yaml`.
-Replace it with the host actually used.

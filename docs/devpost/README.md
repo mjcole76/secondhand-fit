@@ -30,10 +30,10 @@ on **Nov 1** to leave a margin. Nothing can be changed after the period ends.
 | Project name | `Secondhand Fit` | Ready |
 | Elevator pitch | [`description.md`](description.md#elevator-pitch) | Ready |
 | Description | [`description.md`](description.md#about-the-project) | Ready |
-| YouCam API used | Perfect Corp. YouCam API — Apparel Virtual Try-On | Ready; confirm one live render on the deployed app |
+| YouCam API used | Perfect Corp. YouCam API — Apparel Virtual Try-On | Ready; live render confirmed on the deployed app |
 | Built with | [`description.md`](description.md#built-with) | Ready (confirm the host name) |
-| Screenshots | `screenshots/` | Captured; replace `07` and `08` with a live render after deploying |
-| Working demo URL | NOT SET | Deploy with `render.yaml` (root `README.md`, "Deploying the demo") |
+| Screenshots | `screenshots/` | Ready; `07`, `08` and `10` are from the live deployed app |
+| Working demo URL | https://secondhand-fit.onrender.com | Deployed on Render; live render confirmed 2026-10-31 |
 | Code repository URL | https://github.com/mjcole76/secondhand-fit | Pushed; **must be made public** (or shared with contact_event@PerfectCorp.com) |
 | Demo video URL | NOT SET | Record from [`video-script.md`](video-script.md), upload as Public |
 | Testing instructions | [`testing-instructions.md`](testing-instructions.md) | Ready; fill in the demo URL |
@@ -44,7 +44,7 @@ on **Nov 1** to leave a margin. Nothing can be changed after the period ends.
 
 | Item | URL |
 |---|---|
-| Working demo | NOT SET |
+| Working demo | https://secondhand-fit.onrender.com |
 | Code repository | https://github.com/mjcole76/secondhand-fit |
 | Demo video | NOT SET |
 

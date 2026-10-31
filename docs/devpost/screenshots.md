@@ -1,6 +1,7 @@
 # Devpost screenshots
 
 Captured on 2026-10-28 from a production build (`npm run build && npm start`) in offline mock mode,
+except the three live shots noted below,
 at 1440 px wide (desktop) and 390 px wide (phone). The files are in `screenshots/`. Upload them in
 this order. Check the image limits shown on the Devpost form first.
 
@@ -20,12 +21,12 @@ this order. Check the image limits shown on the Devpost form first.
 | 11 | `11-mobile-retake.png` | Phone: the retake instructions on the seller page |
 | 12 | `12-mobile-listing.png` | Phone: a graded listing |
 
-## Replace two shots after deploying
+## Live render
 
-`07-progress.png` and `08-render-labelled.png` show the **mock** placeholder (clearly labelled "MOCK
-RENDER — offline fixture"). After the first live render on the deployed app, capture both again so
-they show a live YouCam result under "Source: live YouCam Apparel VTO render". Use a photo of
-yourself or of someone who has agreed to it, and add it to the asset register in `PROVENANCE.md`.
+`07-progress.png`, `08-render-labelled.png` and `10-status.png` were captured on 2026-10-31 from the
+deployed app (https://secondhand-fit.onrender.com) in live mode: the preview is a real YouCam Apparel
+VTO render, shown under "Source: live YouCam Apparel VTO render". The other shots were captured
+locally in mock mode and show the same screens.
 
 The person in `00-home.png`, `07-progress.png` and `08-render-labelled.png` is the creator-supplied,
 Gemini-generated demonstration image `public/demo/person.jpg` (see `PROVENANCE.md`). No real person
