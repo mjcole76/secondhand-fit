@@ -10,7 +10,37 @@ Submission Period.
 
 ## Text description (features, functionality, consumer or retail value)
 
-Paste the "About the project" section of [`description.md`](description.md).
+Secondhand Fit brings virtual try-on to resale listings, where the only garment photo is usually a
+wrinkled flat-lay on a bed. It is built on the Perfect Corp. YouCam API (Apparel Virtual Try-On).
+
+**Features and functionality**
+
+- **Seller photo checks before any API call.** Four checks run in the browser: framing, background,
+  flatness and shadow. A bad photo is rejected with up to three specific retake instructions, and
+  no API unit is spent.
+- **Automatic preparation.** An accepted photo is straightened, stripped of metadata, cropped to the
+  garment, given a cleaner background and sized for the try-on API, with a before/after view.
+- **A grade on every listing** (A, B or C) that shows buyers how good the source photo is. The grade
+  follows the weakest check, so it cannot be averaged up.
+- **Buyer try-on with consent first.** The buyer agrees to a plain-language statement, adds a selfie
+  and gets a live YouCam try-on with real progress steps and a hard timeout.
+- **Honest results.** Every render is labelled "AI-generated preview only" with the photo grade
+  burned into the image, so downloads and saved items keep it. The app makes no fit, size,
+  condition or authenticity claim.
+- **Cost control.** A unit budget and per-session cap fail closed, showing a clearly labelled
+  example instead of making an uncontrolled paid call.
+
+**Consumer and retail value**
+
+- **Buyers** can picture a one-of-one secondhand item on themselves before buying, when returns are
+  often not possible, and can see how much to trust the preview.
+- **Sellers** get a better listing from the phone photo they already took, with clear instructions
+  instead of guesswork.
+- **Resale marketplaces** add try-on without studio photography, avoid paying for renders that were
+  never going to work, and never show a failed render as if it were reliable.
+
+Try-on tools are built for clean catalogue images. Secondhand Fit makes them work for the resale
+market, where every listing is unique and every photo is taken on a phone.
 
 ## URL to your code repository
 
