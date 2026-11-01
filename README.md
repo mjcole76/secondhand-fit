@@ -1,5 +1,8 @@
 # Secondhand Fit
 
+**Live demo:** https://secondhand-fit.onrender.com · **Demo video:** https://youtu.be/IQ6xkc6ZnL8 ·
+**Reviewer steps:** [docs/devpost/testing-instructions.md](docs/devpost/testing-instructions.md)
+
 The October 16 studio upgrade is included. Run `npm run verify-upgrade` after `npm run build` for the new offline integration checks. Start with [UPGRADE-NOTES.md](UPGRADE-NOTES.md) for the updated walkthrough and verification results.
 
 Try-on for resale listings, where the only garment photo is a wrinkled flat-lay on someone's bedroom

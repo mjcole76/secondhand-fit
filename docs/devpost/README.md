@@ -4,7 +4,7 @@ Everything needed for the 'Enter a Submission' page of the **YouCam API Skin AI 
 Hackathon** (https://youcam-api-skin-ai-ecommerce.devpost.com/). All materials are in English.
 
 - Last updated: 2026-10-28
-- Entry status on Devpost: **not started** (update this line when the draft is saved)
+- Entry status on Devpost: draft filled in; submit before the deadline
 
 ## Deadline
 
@@ -35,7 +35,7 @@ on **Nov 1** to leave a margin. Nothing can be changed after the period ends.
 | Screenshots | `screenshots/` | Ready; `07`, `08` and `10` are from the live deployed app |
 | Working demo URL | https://secondhand-fit.onrender.com | Deployed on Render; live render confirmed 2026-10-31 |
 | Code repository URL | https://github.com/mjcole76/secondhand-fit | Public |
-| Demo video URL | NOT SET | Record from [`video-script.md`](video-script.md), upload as Public |
+| Demo video URL | https://youtu.be/IQ6xkc6ZnL8 | Uploaded to YouTube |
 | Testing instructions | [`testing-instructions.md`](testing-instructions.md) | Ready |
 | Track or category | eCommerce VTO, if the form asks | Check on the form |
 | New build or significant update | New build: all application code was written during the Submission Period (`PROVENANCE.md`, section 1) | Ready |
@@ -46,6 +46,6 @@ on **Nov 1** to leave a margin. Nothing can be changed after the period ends.
 |---|---|
 | Working demo | https://secondhand-fit.onrender.com |
 | Code repository | https://github.com/mjcole76/secondhand-fit |
-| Demo video | NOT SET |
+| Demo video | https://youtu.be/IQ6xkc6ZnL8 |
 
 The step-by-step finish list is in [`FINISH-LINE.md`](../../FINISH-LINE.md) at the repository root.
