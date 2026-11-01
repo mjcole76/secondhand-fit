@@ -34,9 +34,9 @@ on **Nov 1** to leave a margin. Nothing can be changed after the period ends.
 | Built with | [`description.md`](description.md#built-with) | Ready (confirm the host name) |
 | Screenshots | `screenshots/` | Ready; `07`, `08` and `10` are from the live deployed app |
 | Working demo URL | https://secondhand-fit.onrender.com | Deployed on Render; live render confirmed 2026-10-31 |
-| Code repository URL | https://github.com/mjcole76/secondhand-fit | Pushed; **must be made public** (or shared with contact_event@PerfectCorp.com) |
+| Code repository URL | https://github.com/mjcole76/secondhand-fit | Public |
 | Demo video URL | NOT SET | Record from [`video-script.md`](video-script.md), upload as Public |
-| Testing instructions | [`testing-instructions.md`](testing-instructions.md) | Ready; fill in the demo URL |
+| Testing instructions | [`testing-instructions.md`](testing-instructions.md) | Ready |
 | Track or category | eCommerce VTO, if the form asks | Check on the form |
 | New build or significant update | New build: all application code was written during the Submission Period (`PROVENANCE.md`, section 1) | Ready |
 
